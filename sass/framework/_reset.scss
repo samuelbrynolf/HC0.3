@@ -1,0 +1,131 @@
+@charset "UTF-8";
+// MAIN RESET
+//==============================================================================================================
+
+html, 
+body,
+main,
+div, 
+span, 
+object, 
+iframe,
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre,
+abbr, 
+address, 
+cite, 
+code,
+del, 
+dfn, 
+em, 
+img, 
+ins, 
+kbd, 
+q, 
+samp,
+small, 
+strong, 
+sub, 
+var,
+b, 
+i,
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li,
+fieldset, 
+form, 
+label, 
+legend,
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td,
+article, 
+aside, 
+canvas, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section, 
+summary,
+time, 
+mark, 
+audio, 
+video,
+option, 
+a,
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+input[type="submit"], 
+button,
+select,
+textarea {
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	border:0;
+	border-radius: 0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	font-weight: normal;
+	font-style: normal;
+	background:transparent;
+}
+
+img{
+	display: block;
+}
+
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+input[type="submit"], 
+button,
+select {
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-touch-action: none !important;
+}
+
+button,
+select{
+	cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+input:focus{
+	outline: 0;
+}
+
+input[type="submit"]::-moz-focus-inner {
+	border: 0;
+} 
+
+// http://christophzillgens.com/en/articles/equal-height-input-and-button-elements-in-firefox-and-safari
+//https://github.com/paulirish/html5-boilerplate/blob/362d0b7/css/style.css#L35-37

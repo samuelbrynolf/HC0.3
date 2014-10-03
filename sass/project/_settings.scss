@@ -1,0 +1,91 @@
+@charset "UTF-8";
+// SETTINGS
+// -> Grid and font settings, variables, mixins and useful css-classes
+//==============================================================================================================
+
+// 1.1 	LAYOUT: MEDIAQUERIES BREAKPOINTS + CUSTOM WIDTHS (PX)
+// 1.2 	LAYOUT: GRID-GUTTERS (PX)
+// 2. 	BODY BASE-TYPE + UNIQUE BODY-SIZE WITHIN EACH MEDIAQUERY (PX)
+// 3. 	FONTS
+// 4. 	COLORS (http://colorschemedesigner.com/)
+// 5. 	MISC VARS
+
+//==============================================================================================================
+
+// 1.1 -----------------------------------------------------------------------------------------------------------
+
+$beta_screen: 768; // (Use as variable: "$beta_query")
+$charlie_screen: 1025; // (Use as variable: "$charlie_query")
+$delta_screen: 1440; // (Use as variable: "$delta_query")
+$echo_screen: 1880; // (Use as variable: "$echo_query")
+$max_width: 1280; // (Use as variable: "$containerwidth")
+
+// Decreased maxwidth
+$width_decr: 62.5%; // (Use as HTML-class, added to l-container: "decr-mw")
+$max_width_decr: 7em; // (Use as HTML-class, added to l-container: "decr-mw")
+
+// Increased maxwidth
+$max_width_incr: 100%; // (Use as HTML-class, added to l-container: "incr-mw")
+
+// 1.2 -----------------------------------------------------------------------------------------------------------
+
+$alpha_gutter: 12; // (Use as variable: "$gutter_alpha" and "$gutter_alpha_half")
+$beta_gutter: 20; // Use as variable: "$gutter_beta" and "$gutter_beta_half")
+$charlie_gutter: 30; // (Use as variable: "$gutter_charlie" and "$gutter_charlie_half")
+$delta_gutter: 40; // (Use as variable: "$gutter_delta" and "$gutter_delta_half")
+$echo_gutter: 60; // (Use as variable: "$gutter_echo" and "$gutter_echo_half")
+
+// 2 -----------------------------------------------------------------------------------------------------------
+
+$alpha_bodysize: 16;
+$body_leading: 24; // (Use as variable: "$leading")
+
+// -- 
+
+$beta_bodysize: 16; 		
+$charlie_bodysize: 16;				
+$delta_bodysize:16;				
+$echo_bodysize: 16;				
+
+// 3 -----------------------------------------------------------------------------------------------------------
+
+$serif: serif;
+$sans-serif: sans-serif;
+$icon-font: 'icomoon';
+
+
+// 4 -----------------------------------------------------------------------------------------------------------
+
+$body: #002740;
+$bodycolor: #333333;
+
+$action: #FFCA59;
+$primary: red;
+$secondary: green;
+$complementary: #006EB0;
+
+$subtle-bg: #f4f4f4;
+$subtle-text: #999;
+
+$gradleft: rgb(219, 86, 149);
+$gradright: rgb(255, 202, 149);
+$gradleft-rgba: rgba(219, 86, 149, 0.65);
+$gradright-rgba: rgba(255, 202, 149, 0.65);
+
+$form-border-color: lighten($subtle-text, 10%);
+
+$msg-ok: #308490;
+$msg-ok-bg: lighten($msg-ok, 50%);
+$msg-error: #B94A48;
+$msg-error-bg: #F2DEDE;
+$msg-active: $msg-ok-bg;
+$highlight: lighten($complementary, 28%);
+
+
+
+// 5 -----------------------------------------------------------------------------------------------------------
+
+
+
+// 6 -----------------------------------------------------------------------------------------------------------
+

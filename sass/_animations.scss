@@ -1,0 +1,65 @@
+@charset "UTF-8";
+// TRANSITIONS
+//==============================================================================================================¨
+
+.transitions{
+	.parsley-errors-list{
+		transition: all, 0.1s, ease-in;
+	}
+	
+  .example{
+		transition: transform, 0.2s, ease-out;
+	}
+	
+	.m-expand-section{
+		transition: max-height, 0.2s, ease-in;
+	}
+	
+	.a-btn{
+		transition: background, 0.06s, linear;
+	}
+	
+	.m-expand-section.s-is-expanded:after,
+	.a-expand-section__button{
+		transition: opacity, 0.3s, linear;
+	}
+	
+	.a-btn:focus{
+		transition-property: none;
+	}
+	
+	input[type="text"],
+	input[type="email"], 
+	input[type="password"],
+	input[type="submit"],
+	.a-inputText{
+		transition: border-color, 0.06s, ease-in-out;
+	}
+	
+	.a-label:before,
+	.a-label,
+	p a,
+	.a-sitename,
+	.m-global-nav__a{
+		transition: all, 0.06s, ease-in-out;
+	}
+}
+
+
+// KEYFRAME ANIMATIONS
+// http://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+//==============================================================================================================
+
+.a-label.s-is-checked:before {
+	@include animation('iconlove .2s 1');
+}
+
+@include keyframes(iconlove) {
+	20%{ 
+		transform: translate3d(-0.1em,0,0) rotate(1turn) scale(1.1); 
+	}
+}
+
+//LOADER ANIMATIONS
+
+

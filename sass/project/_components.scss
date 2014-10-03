@@ -1,0 +1,46 @@
+.t-components{
+	margin: 0 auto;
+	width: 60%;
+}
+
+.lib-overlay-container{
+	position: relative;
+	
+	img{
+		width: 100%;
+	}
+}
+
+.lib-color{
+	height: 5.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	color: $body;
+	
+	&.action{
+		background: $action;
+	}
+	
+	&.complementary{
+		background: $complementary;
+	}
+	
+	&.subtle{
+		color: $bodycolor;
+		background: $subtle-bg;
+	}
+	
+	&.gradient{
+		@extend %gradient;
+	}
+	
+	&.gradient-overlay{
+		@extend %overlay;
+		padding-top: 10%;
+		@extend %gradient_rgba;
+	}
+	
+	&.gradient-complementary{
+		@extend %gradient_complementary;
+	}
+}

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+// MIXINS & FUNCTIONS (prefixes removed since Grunt-setup uses Autoprefixer)
+//==============================================================================================================
+
+@mixin type-to-em( $fontsizepx: $alpha_bodysize, $lineheightpx: $body_leading ) {
+	font-size: $fontsizepx / $alpha_bodysize + 0em;
+	line-height: $lineheightpx / $fontsizepx;
+}
+
+@mixin textColumnCount($count)
+{
+  column-count: 				$count;
+}
+
+@mixin textColumnGap($gap)
+{
+  column-gap: 				$gap;
+}
+
+@mixin textColumnBreak($when:always)
+{
+  column-break-before: $when;
+}
+
+
+//.example{ transform: translate3d($x,$y,$z);}
+
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  //-webkit-animation: $animations;
+  //-moz-animation:    $animations;
+  //-o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  //@-webkit-keyframes #{$animationName} {
+  //  @content;
+  //}
+  //@-moz-keyframes #{$animationName} {
+  //  @content;
+  //}
+  //@-o-keyframes #{$animationName} {
+  //  @content;
+  //}
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+
+
+// MULTIGRADIENT
+//==============================================================================================================
+
+@mixin multigradient($firstC: $gradient_top, $secondC: $gradient_33, $thirdC: $gradient_66, $fourthC: $gradient_bottom){
+	background: $thirdC;
+	//background: -moz-linear-gradient(top,  $firstC 0%, $secondC 45%, $thirdC 67%, $fourthC 100%);
+	//background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$firstC), color-stop(33%,$secondC), color-stop(67%,$thirdC), color-stop(100%,$fourthC));
+	//background: -webkit-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+	//background: -o-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+	//background: -ms-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+	background: linear-gradient(to bottom,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$firstC}', endColorstr='#{$fourthC}',GradientType=0 );
+}

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+// HOVER
+//==============================================================================================================
+
+.a-btn:hover,
+input[type="submit"].a-btn:hover{
+	color: $body;
+	background-color: $action; 
+	pointer: cursor;
+}
+
+.a-sitename:hover,
+.m-global-nav__a:hover,
+.a-user-login:hover,
+p a:hover,
+.a-label:hover,
+.a-label.s-is-checked:hover{
+	text-decoration: underline;
+}
+
+
+
+// FOCUS
+//==============================================================================================================
+
+input[type="text"]:focus,
+input[type="email"]:focus, 
+input[type="password"]:focus,
+.a-inputText:focus,
+.a-select:focus{
+	border-color: $form-border-color;
+}
+
+input[type="submit"].a-btn:focus,
+.a-btn:focus {
+	color: white;
+	border-color: darken($action, 25%);
+	background-color: darken($action, 25%);
+}
+
+/* Firefox 7+ focus style - This works around the issue that -moz-appearance: window  kills the normal select focus. Using semi-opaque because outline doesn't handle rounded corners */
+_::-moz-progress-bar, 
+body:last-child .m-dropdown .a-select:focus {
+  outline: 1px solid rgba($form-border-color, .99);
+}
+
+/* Firefox focus has odd artifacts around the text, this kills that */
+.a-select:-moz-focusring {
+ 	color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.m-table.editable td:focus{
+	color: #000;
+	background-color: $msg-active;
+}
+
+
+
+
+
+
+// IS-CHECKED
+//==============================================================================================================
+
+.a-label.s-is-checked{
+	color: $msg-ok;
+	
+	&.checkbox:before{
+		content: '\e046';
+	}
+	
+	&.radio:before{
+		content: '\e042';
+	}
+}
+
+
+
+// IS-ACTIVE
+//==============================================================================================================
+
+
+
+.m-toggled.s-is-active .a-toggled__toggler{
+	
+	&:after{
+		content: '\e115';
+	}
+}
+
+
+// IS-PASSIVE
+//==============================================================================================================
+
+.a-btn.s-is-passive{
+  color: $subtle-text;
+  border-color: $subtle-text;
+  opacity: 0.5;
+}
+
+// IS-COLLAPSED
+//==============================================================================================================
+
+
+// IS-EXPANDED
+//==============================================================================================================
+
+.m-expand-section.s-is-expanded{
+
+	&:after{
+		opacity: 0;
+	}
+}
+
+// IS-CURRENT
+//==============================================================================================================
+
+
+
+
+
+
+// IS-MOVED
+//==============================================================================================================
+
+
+
+
+
+// IS-HIDDEN
+//==============================================================================================================
+
+.m-toggled__elem.s-is-hidden{
+	display: none;
+}
+
+.a-expand-section__button.s-is-hidden{
+	opacity: 0;
+}
+
+
+.a-label.s-is-disabled{
+	color: $subtle-text !important;
+	cursor: default !important;
+}
+
+
+// TEMPLATE-STATES --> _templates.scss
+//==============================================================================================================
+
+
+// BROWSERVERSION AS STATE
+//==============================================================================================================
+

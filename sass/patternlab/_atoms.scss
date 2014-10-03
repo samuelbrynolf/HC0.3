@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+// TEXT ==============================================================================================================
+
+.a-xlarge,
+.a-large,
+.a-medium,
+.a-small,
+%formtext,
+%buttonStyle,
+strong,
+.a-sitename{
+	-webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  	
+  a,
+  span{
+    font-weight: inherit;
+  }
+}
+
+.a-xlarge,
+.a-large,
+.a-medium,
+.a-small{
+	font-family: $sans-serif;
+}
+
+.a-xlarge{
+	@include type-to-em(74,86);
+}
+
+.a-large{}
+
+.a-medium{}
+
+.a-small{}
+
+.a-preamble{
+	@include type-to-em(24,36);
+	
+	p{
+		font-size: 1;
+		line-height: inherit;
+	}
+}
+
+.a-fineprint{
+	@include type-to-em(12,18);
+}
+
+a{
+	text-decoration: none;
+	color: $action;
+}
+
+em{}
+
+strong{}
+
+p + p{
+	margin-top: $leading;
+}
+
+
+a[href^="http://"] {
+	-ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+a[href^="http://www.domain.com"], 
+a[href^="http://domain.com"] {
+	word-break: normal;
+}
+
+
+// LISTS =============================================================================================================
+
+
+.a-ol,
+.a-ul{
+	
+	li + li{
+	
+	}
+}
+
+.a-ol{
+	list-style-type: decimal-leading-zero;
+	
+	li{}
+}
+
+.a-ul{
+	list-style-type: disc;
+	
+	li{}
+}
+
+
+// IMAGES + VIDEO/MEDIA =============================================================================================================
+
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.a-sitename{
+	//@extend %ir;
+	//width: 280px;
+	//height: $leading*3;
+	//background: {
+		//color: white;
+		//size: 200px 200px;
+		//image: url(img/logo.png);
+		//repeat: no-repeat;
+		//position: top center;
+	//}
+	
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+		//background-image: url(img/logo_hires.png);		
+	}
+}
+
+
+
+// FORMS ==============================================================================================================
+
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+.a-inputText{
+	@extend %formtext;
+	
+	&.inline{
+		@extend %inline;
+	}
+}
+
+.a-textarea,
+textarea{
+  @extend %formtext;
+}
+
+.a-input-descr{
+	@extend .a-fineprint;
+}
+ 
+.a-label{
+	position: relative;
+	font-family: $sans-serif;
+	@include type-to-em(18,24);
+	color: $subtle-text;
+	cursor: pointer;
+	
+	&.block{
+		display: block;
+		width: 100%;
+	}
+	
+	&.checkbox,
+	&.radio{
+		padding-left: 1em;
+	
+		&:before{
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 50;
+			height: 24/18+0em;
+			width: 24/18+0em;
+			margin-top: -12/18+0em;
+			font-family: $icon-font;
+			font-size: 24/18+0em;
+			content: '\e045';
+			pointer-events: none;
+		}
+	}
+	
+	&.radio{
+	
+		&:before{
+			content: '\e049';
+		}
+	}
+	
+	input[type='checkbox'],
+	input[type='radio'] {
+		visibility: hidden;
+	}
+}
+
+.a-select {
+ 	@extend %formtext;
+ 	border: 1px solid transparent;
+ 	font-size: ($alpha_bodysize)+0px;
+ 	line-height: $body_leading+0px;
+	padding: 12/$body_leading+0em $alpha_gutter/$alpha_bodysize+0em;
+	
+	option{
+		padding-left: 1em;
+		
+		&:disabled{
+			color: $subtle-text;
+		}
+	}
+}
+
+
+// BUTTONS + EVENT-ELEMENTS ==============================================================================================================
+
+.a-btn,
+input[type="submit"].a-btn{
+	@extend %buttonStyle;
+	
+	&.inline{
+		@extend %inline;
+		//padding-right: 24/$alpha_bodysize+0em;
+		//padding-left: 24/$alpha_bodysize+0em;
+	}
+}
+
+.a-toggled__toggler{
+	position: relative;
+	cursor: pointer;
+	
+	&:after{
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 50;
+		height: inherit;
+		width: auto;
+		font-family: $icon-font;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: normal;
+		content: '\e114';
+		color: $action;
+		pointer-events: none;
+	}
+}
+
+.a-expand-section__button{
+	color: $action;
+	width: 100%;
+	margin-top: 0;
+	padding-top: $leading/2;
+	text-align: left;
+	
+	&:after{
+		font-family: $icon-font;
+		content: '\e114';
+		font-size: 13/$alpha_bodysize+0em;
+		padding-left: $gutter_alpha;
+		color: $action;
+		opacity: 1;
+	}
+}
