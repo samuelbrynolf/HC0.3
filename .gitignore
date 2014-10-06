@@ -48,3 +48,4 @@ Thumbs.db
 #GRUNT#
 ./node_modules/*
 node_modules
+style.css
