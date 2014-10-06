@@ -21,7 +21,7 @@ body:after {
   display:none;
 }
 
-@media screen and (min-width: $beta_query) {
+@media all and (min-width: $beta_query) {
 
 	head{
 		font-family: 'bq';
@@ -36,7 +36,7 @@ body:after {
 	}
 }
 
-@media screen and (min-width: $charlie_query) {
+@media all and (min-width: $charlie_query) {
 
 	head{
 		font-family: 'cq';
@@ -51,7 +51,7 @@ body:after {
 	}
 }
 
-@media screen and (min-width: $delta_query) {
+@media all and (min-width: $delta_query) {
 	head{
 		font-family: 'dq';
 	}
@@ -65,7 +65,7 @@ body:after {
 	}
 }
 
-@media screen and (min-width: $echo_query) {
+@media all and (min-width: $echo_query) {
 
 	head{
 		font-family: 'eq';

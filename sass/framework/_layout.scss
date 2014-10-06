@@ -200,7 +200,7 @@
 // BETA
 //==============================================================================================================
 
-@media screen and (min-width: $beta_query) {
+@media all and (min-width: $beta_query) {
 	
 	.l-container{
 	  padding-right: $gutter_beta_half;
@@ -326,7 +326,7 @@
 // CHARLIE
 //==============================================================================================================
 
-@media screen and (min-width: $charlie_query) {
+@media all and (min-width: $charlie_query) {
 
 	.l-container{
 		padding-right: $gutter_charlie_half;
@@ -451,7 +451,7 @@
 // DELTA
 //==============================================================================================================
 
-@media screen and (min-width: $delta_query) {
+@media all and (min-width: $delta_query) {
 
 	.l-container{
 		padding-right: $gutter_delta_half;
@@ -575,7 +575,7 @@
 // ECHO
 //==============================================================================================================
 
-@media screen and (min-width: $echo_query) {
+@media all and (min-width: $echo_query) {
 	
 	.l-container{
 		padding-right: $gutter_echo_half;
@@ -696,5 +696,4 @@
 	.l-pre-E11{
 	  margin-left: 91.66%;
 	}
-	
 }

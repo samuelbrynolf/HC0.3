@@ -18,7 +18,12 @@ $gutter_echo:										($echo_gutter / $echo_bodysize)+0em;
 
 $containerwidth: 				    		($max_width+($echo_gutter*2))/$echo_bodysize+0em;
 
-$beta_query: 										($beta_screen / 16)+0em;
-$charlie_query: 				    		($charlie_screen / 16)+0em;
-$delta_query:										($delta_screen / 16)+0em;
-$echo_query:										($echo_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS -> $beta_query: 				($beta_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS ->  $charlie_query: 		($charlie_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS -> $delta_query:				($delta_screen / 16)+0em;
+// UNCOMMENT TO SET MQ IN EMS -> $echo_query:					($echo_screen / 16)+0em;
+
+$beta_query: 										$beta_screen+0px;
+$charlie_query: 				    		$charlie_screen+0px;
+$delta_query:										$delta_screen+0px;
+$echo_query:										$echo_screen+0px;
