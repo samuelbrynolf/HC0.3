@@ -120,5 +120,11 @@
  	toggleElems();
  	expandSection();
  	formInteractions()
-	 	
+ 	
+ 	setTimeout(function(){
+		$('.wfl body').css({
+			'visibility' : 'visible',
+			'opacity' : '1'
+		});
+	},2100);
 })();

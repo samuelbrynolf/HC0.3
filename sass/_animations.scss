@@ -3,6 +3,11 @@
 //==============================================================================================================¨
 
 .transitions{
+	
+	.wfl body{
+		transition: opacity, 0.5s, ease-in-out;
+	}
+	
 	.parsley-errors-list{
 		transition: all, 0.1s, ease-in;
 	}

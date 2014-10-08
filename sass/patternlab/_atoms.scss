@@ -2,6 +2,27 @@
 
 // TEXT ==============================================================================================================
 
+// Webfontloader -----------------------------------------------------------------------------------------------------
+
+.a-xlarge,
+.a-large,
+.a-medium,
+.a-small{
+	font-family: $fallbackfont;
+}
+
+.wf-active{
+
+	.a-xlarge,
+	.a-large,
+	.a-medium,
+	.a-small{
+		font-family: $caption;
+	}
+}
+
+// -----------------------------------------------------------------------------------------------------
+
 .a-xlarge,
 .a-large,
 .a-medium,
@@ -17,13 +38,6 @@ strong,
   span{
     font-weight: inherit;
   }
-}
-
-.a-xlarge,
-.a-large,
-.a-medium,
-.a-small{
-	font-family: $sans-serif;
 }
 
 .a-xlarge{

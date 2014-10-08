@@ -6,20 +6,33 @@ head{
 	font-family: 'aq';
 }
 
+.wfl body{
+	visibility: hidden;
+	opacity: 0;
+}
+
 body{
  	font-size: $alpha_bodysize/16*100+0%;
   line-height: $leading;
-  font-family: $sans-serif;
-  color: $bodycolor;
+  font-family: $fallbackfont;
+  color: $fallbackfont;
   background: $body;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color : rgba(0,0,0,0.2);
+	
+	&:after {
+		content: 'aq';
+  	display:none;
+	}
 }
 
-body:after {
-	content: 'aq';
-  display:none;
+// Webfontloader -----------------------------------------------------------------------------------------------------
+
+.wf-active body{
+	font-family: $bodyfont;
 }
+
+// -----------------------------------------------------------------------------------------------------
 
 @media all and (min-width: $beta_query) {
 
