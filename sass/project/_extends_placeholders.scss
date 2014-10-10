@@ -24,7 +24,7 @@
 
 %formtext{
 	@include type-to-em(18,24);
-	font-family: $sans-serif;
+	font-family: $bodyfont;
 	width: 100%;
 	padding: $body_leading/18+0em $body_leading/18+0em;
 	color: rgba($bodycolor, 0.8);
@@ -53,7 +53,7 @@
 %buttonStyle{
 	display: block;
 	@include type-to-em(18,24);
-	font-family: $sans-serif;
+	font-family: $bodyfont;
 	width: 100%;
 	padding: 0;
 	line-height: 48/18+0em;

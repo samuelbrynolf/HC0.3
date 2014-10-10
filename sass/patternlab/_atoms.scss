@@ -17,7 +17,7 @@
 	.a-large,
 	.a-medium,
 	.a-small{
-		font-family: $caption;
+		font-family: $captionfont;
 	}
 }
 
@@ -172,7 +172,7 @@ textarea{
  
 .a-label{
 	position: relative;
-	font-family: $sans-serif;
+	font-family: $bodyfont;
 	@include type-to-em(18,24);
 	color: $subtle-text;
 	cursor: pointer;
