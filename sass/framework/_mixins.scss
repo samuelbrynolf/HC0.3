@@ -7,6 +7,12 @@
 	line-height: $lineheightpx / $fontsizepx;
 }
 
+@mixin type-to-vim($fontsizepx: $alpha_bodysize, $lineheightpx: $body_leading){
+	font-size: $fontsizepx / $alpha_bodysize + 0em; 
+  font-size: $fontsizepx + 0vm;
+  font-size: $fontsizepx + 0vmin;
+}
+
 @mixin textColumnCount($count)
 {
   column-count: 				$count;

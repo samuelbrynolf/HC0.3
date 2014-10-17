@@ -37,10 +37,29 @@
 
 // SECTIONS =============================================================================================================
 
+.o-modal{
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -500;
+	background-color: transparent;
+	pointer-events: none;
+	
+	.m-modal__popup{
+		pointer-events: none;
+		z-index: -600;
+	}
+}
+
 
 // WIDGETFIELDS =============================================================================================================
 
 .o-contacts{
+
+// clear by number of items / screen
 
 	.m-contacts__contact:nth-of-type(2n+1){
 		@media screen and (min-width: $beta_query) {

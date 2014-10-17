@@ -283,3 +283,26 @@ input[type="submit"].a-btn{
 		opacity: 1;
 	}
 }
+
+.a-modal__btn{
+	position: relative;
+	visibility: hidden;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	
+	&:after{
+		position: absolute;
+		top: 0;
+		right: 0;
+		visibility: visible;
+		font-family: $icon-font;
+		font-size: 24px;
+		line-height: 1;
+		color: $action;
+	}
+	
+	&.close:after{
+		content: '\e043';
+	}
+}
