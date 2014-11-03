@@ -6,16 +6,14 @@ head{
 	font-family: 'aq';
 }
 
-.wfl body{
-	visibility: hidden;
-	opacity: 0;
+html{
+	font-size: $alpha_bodysize/16*100+0%;
+	line-height: $body_leading/16;
 }
 
 body{
- 	font-size: $alpha_bodysize/16*100+0%;
-  line-height: $leading;
-  font-family: $fallbackfont;
-  color: $fallbackfont;
+  font-family: $bodyfont;
+  color: $bodycolor;
   background: $body;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color : rgba(0,0,0,0.2);
@@ -26,12 +24,6 @@ body{
 	}
 }
 
-// Webfontloader -----------------------------------------------------------------------------------------------------
-
-.wf-active body{
-	font-family: $bodyfont;
-}
-
 // -----------------------------------------------------------------------------------------------------
 
 @media all and (min-width: $beta_query) {
@@ -40,7 +32,7 @@ body{
 		font-family: 'bq';
 	}
 
-	body{
+	html{
 		font-size: $beta_bodysize/16*100+0%;
 	}
 
@@ -55,7 +47,7 @@ body{
 		font-family: 'cq';
 	}
 
-	body{
+	html{
 		font-size: $charlie_bodysize/16*100+0%;
 	}
 
@@ -69,7 +61,7 @@ body{
 		font-family: 'dq';
 	}
 
-	body{
+	html{
 		font-size: $delta_bodysize/16*100+0%;
 	}
 
@@ -84,7 +76,7 @@ body{
 		font-family: 'eq';
 	}
 
-	body{
+	html{
 		font-size: $echo_bodysize/16*100+0%;
 	}
 

@@ -121,10 +121,10 @@
  	expandSection();
  	formInteractions()
  	
- 	setTimeout(function(){
-		$('.wfl body').css({
-			'visibility' : 'visible',
-			'opacity' : '1'
-		});
-	},2100);
+ 	//setTimeout(function(){
+	//	$('.wfl body').css({
+	//		'visibility' : 'visible',
+	//		'opacity' : '1'
+	//	});
+	//},2100);
 })();

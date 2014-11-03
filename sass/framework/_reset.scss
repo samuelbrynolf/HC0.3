@@ -97,6 +97,13 @@ img{
 	display: block;
 }
 
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
 input[type="text"],
 input[type="email"], 
 input[type="password"],

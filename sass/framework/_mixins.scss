@@ -2,15 +2,22 @@
 // MIXINS & FUNCTIONS (prefixes removed since Grunt-setup uses Autoprefixer)
 //==============================================================================================================
 
-@mixin type-to-em( $fontsizepx: $alpha_bodysize, $lineheightpx: $body_leading ) {
-	font-size: $fontsizepx / $alpha_bodysize + 0em;
+@mixin type-to-em( $fontsizepx: 16, $lineheightpx: $body_leading ) {
+	font-size: $fontsizepx / 16 + 0em;
 	line-height: $lineheightpx / $fontsizepx;
 }
 
-@mixin type-to-vim($fontsizepx: $alpha_bodysize, $lineheightpx: $body_leading){
-	font-size: $fontsizepx / $alpha_bodysize + 0em; 
-  font-size: $fontsizepx + 0vm;
-  font-size: $fontsizepx + 0vmin;
+// http://snook.ca/archives/html_and_css/font-size-with-rem
+@mixin type-to-rem( $fontsizepx: 16, $lineheightpx: $body_leading ) {
+	font-size: $fontsizepx / 16 + 0em;
+	line-height: $lineheightpx / $fontsizepx;
+}
+
+@mixin type-to-vmin($pxFallback: 16, $vmin: 4, $lineheight: 1.5){
+	font-size: $pxFallback / 16 + 0em; 
+  font-size: $vmin + 0vm;
+  font-size: $vmin + 0vmin;
+  line-height: $lineheight;
 }
 
 @mixin textColumnCount($count)
