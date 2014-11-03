@@ -128,7 +128,7 @@
 			
 			$(window).on('resize',function(){
 				if(resizing){
-					clearTimeout( resizing );
+					clearTimeout(resizing);
 					resizing = null;
 				}
 				resizing = setTimeout( done, 50 );
@@ -139,7 +139,9 @@
 		
 		window.watchResize(function(){
 			size = getActiveMQ();
-		  alert(size);
+			if(size == 'bq'){
+			  alert(size);
+		  }
 		});
 		
 		function getActiveMQ(){
@@ -156,7 +158,7 @@
 				getActiveMQ = function(){
 		      return computed( watcher, null ).getPropertyValue( 'font-family' ).replace(/['"]/g,'');
 				};
-			} else{
+			} else {
 				getActiveMQ = function(){
 					return 'unknown';
 				};
