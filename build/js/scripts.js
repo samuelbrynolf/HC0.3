@@ -114,12 +114,63 @@
 			checkedStyles();
 		}
 	}
+	
+	function mqConditioned(){
+		var size = 0;
+	
+		window.watchResize = function(callback){
+			var resizing;
+			function done(){
+				clearTimeout( resizing );
+				resizing = null;
+				callback();
+			}
+			
+			$(window).on('resize',function(){
+				if(resizing){
+					clearTimeout( resizing );
+					resizing = null;
+				}
+				resizing = setTimeout( done, 50 );
+			});
+			// init
+			callback();
+		};
+		
+		window.watchResize(function(){
+			size = getActiveMQ();
+		  alert(size);
+		});
+		
+		function getActiveMQ(){
+			var computed = window.getComputedStyle,
+		  watcher = document.getElementById('getActiveMQ-watcher');
+			
+			if('currentStyle' in watcher){
+				getActiveMQ = function(){
+					return watcher.currentStyle['fontFamily'];
+				};
+			}
+			
+			else if (computed){
+				getActiveMQ = function(){
+		      return computed( watcher, null ).getPropertyValue( 'font-family' ).replace(/['"]/g,'');
+				};
+			} else{
+				getActiveMQ = function(){
+					return 'unknown';
+				};
+			}
+			return getActiveMQ();
+		}
+	}
  	
  	tappyItems();
  	smoothScroll();
  	toggleElems();
  	expandSection();
- 	formInteractions()
+ 	formInteractions();
+ 	mqConditioned();
  	
  	//setTimeout(function(){
 	//	$('.wfl body').css({
