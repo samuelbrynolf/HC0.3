@@ -35,8 +35,31 @@
   column-break-before: $when;
 }
 
+@mixin truncate($width: 100%) {
+	width: $width;
+	max-width: 100%;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 
-//.example{ transform: translate3d($x,$y,$z);}
+
+@mixin translate($x:0, $y:0){
+  -moz-transform: translate($x,$y);
+  -ms-transform: translate($x,$y);
+  -o-transform: translate($x,$y);
+  -webkit-transform: translate($x,$y);
+  transform: translate($x,$y);
+}
+
+@mixin translate3d($x:0, $y:0, $z:0){
+  -moz-transform: translate3d($x,$y,$z);
+  -ms-transform: translate3d($x,$y,$z);
+  -o-transform: translate3d($x,$y,$z);
+  -webkit-transform: translate3d($x,$y,$z);
+  transform: translate3d($x,$y,$z);
+}
 
 // http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ -- nr 3
 $image-path: '../img' !default;
