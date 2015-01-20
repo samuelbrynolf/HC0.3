@@ -2,6 +2,7 @@
 
 <html class="no-js">
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta charset="utf-8">
 	  <meta name="HandheldFriendly" content="True">
 	  <meta name="MobileOptimized" content="320">
@@ -9,6 +10,14 @@
 	  	
 	  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
 	  <link rel="stylesheet" href="style.css">
+	  
+	  <!--[if lt IE 9]>
+			<script type="text/javascript" src="js/helpers/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script type="text/javascript" src="js/helpers/respond.min.js"></script>
+		<![endif]-->
 		
 	  <title></title>
 
