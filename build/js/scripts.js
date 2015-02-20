@@ -25,13 +25,13 @@
 				
 			}
 		} // end mediaChecker
+		
+		mediaChecker();
 
 		viewPort.on('resize', function(){
 			clearTimeout(resizeTimeoutId);
 			resizeTimeoutId = setTimeout(mediaChecker,300);
 		});
-		
-		mediaChecker();
 	}
 	
 	// FUNCTIONS -------------------------------------------------------------------------------------------------------
