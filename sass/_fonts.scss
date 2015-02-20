@@ -1,3 +1,37 @@
+// Webfontloader (See  )-----------------------------------------------------------------------------------------------------
+
+@media all and (min-width: $beta_query) {
+
+	.wfl{
+		.example,
+		.test{
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.25s ease-in-out;
+		}
+		
+		.example-2{
+			@include translate3d($leading/4,0,0);
+			transition: 0.55s ease-in-out;
+		}
+		
+		&.wf-active,
+		&.wf-inactive{
+			.example,
+			.test{
+				visibility: visible !important;
+				opacity: 1 !important;
+			}
+			
+			.example-2{
+				@include translate3d(0,0,0);
+			}
+		}
+	}		
+}
+
+// Fontfaces ---------------------------------------------------------------------------------------------------
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot?1vz0rr');

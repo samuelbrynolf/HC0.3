@@ -1,14 +1,40 @@
-// TOC
 //==============================================================================================================
 
-// NAME 										
-// NAVIGATION						
+// RUN THEESE FIRST 										
+// FUNCTIONS						
 // FUNCTIONS CALLS
+// FALLBACKS
 
 //==============================================================================================================
 
 (function() {
+	
+	// RUN THEESE FIRST  -----------------------------------------------------------------------------------------
+	
 	$('html').addClass('transitions');
+	
+	// Mediaqueried-scripts --------------------------------------------------------------------------------------
+		
+	if($('#getActiveMQ-watcher').length){
+		var resizeTimeoutId = 0;
+		function mediaChecker(){
+			var screen = getActiveMQ();
+			if(screen == 'aq'){
+				
+			} else {
+				
+			}
+		} // end mediaChecker
+
+		viewPort.on('resize', function(){
+			clearTimeout(resizeTimeoutId);
+			resizeTimeoutId = setTimeout(mediaChecker,300);
+		});
+		
+		mediaChecker();
+	}
+	
+	// FUNCTIONS -------------------------------------------------------------------------------------------------------
 	
 	function tappyItems(){	
 		$('a.tappilyTap').bind('tap', function(e){
@@ -27,7 +53,7 @@
 	} // end elementTolink
 	
 	function smoothScroll(){
-  	$('.jumper').bind('tap', function(e){
+  	$('.js-jumper').bind('tap', function(e){
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
     	&& location.hostname == this.hostname) {
       	var jQuerytarget = $(this.hash);
@@ -115,69 +141,62 @@
 		}
 	}
 	
-	function mqConditioned(){
-		var size = 0;
+	function trigByLoad(){
+		if($('.js-trigParent').length){
+			var triggedParentArr = $('.js-trigParent');
+			
+			triggedParentArr.each(function(i){
+				var $this = $(this);
+				var posterImg = $this.find('img').eq(0);
+				var image = new Image();
 	
-		window.watchResize = function(callback){
-			var resizing;
-			function done(){
-				clearTimeout( resizing );
-				resizing = null;
-				callback();
-			}
-			
-			$(window).on('resize',function(){
-				if(resizing){
-					clearTimeout(resizing);
-					resizing = null;
-				}
-				resizing = setTimeout( done, 50 );
+				$(image).on('load', function(){ 
+					$this.parent(triggedParentArr).removeClass('s-is-hidden');
+				});
+				
+				setTimeout(function(){ 
+					image.src = posterImg.attr('src'); 
+				}, i*150);
 			});
-			// init
-			callback();
-		};
-		
-		window.watchResize(function(){
-			size = getActiveMQ();
-			if(size == 'bq'){
-			  alert(size);
-		  }
-		});
-		
-		function getActiveMQ(){
-			var computed = window.getComputedStyle,
-		  watcher = document.getElementById('getActiveMQ-watcher');
-			
-			if('currentStyle' in watcher){
-				getActiveMQ = function(){
-					return watcher.currentStyle['fontFamily'];
-				};
-			}
-			
-			else if (computed){
-				getActiveMQ = function(){
-		      return computed( watcher, null ).getPropertyValue( 'font-family' ).replace(/['"]/g,'');
-				};
-			} else {
-				getActiveMQ = function(){
-					return 'unknown';
-				};
-			}
-			return getActiveMQ();
+    }
+	}
+	
+	function fitvids(){
+		if($('.js-videoParent').length){
+			var videoParent = $('.js-videoParent');
+			videoParent.fitVids();
 		}
 	}
+	
+	// FUNCTION CALLS -------------------------------------------------------------------------------------------------------
  	
  	tappyItems();
  	smoothScroll();
  	toggleElems();
  	expandSection();
  	formInteractions();
- 	mqConditioned();
+ 	trigByLoad();
+ 	fitvids();
  	
- 	//setTimeout(function(){
-	//	$('.wfl body').css({
-	//		'visibility' : 'visible',
-	//		'opacity' : '1'
-	//	});
-	//},2100);
+ 	// FALLBACKS -------------------------------------------------------------------------------------------------------
+ 	
+	setTimeout(function(){
+ 		var wflObjects = [
+	 		
+	 		'.a-xlarge', 
+	 		'.a-medium', 
+	 		'.m-content h2', 
+	 		'h3', 
+	 		'h4', 
+	 		'blockquote'
+ 		
+ 		].join(', ');
+
+		$(wflObjects).css({
+			'visibility' 	: 'visible',
+			'opacity' 		: '1',
+			'transform'		: 'translate3d(0,0,0)',
+		});
+	},1000);
+
 })();
