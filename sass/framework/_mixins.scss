@@ -63,24 +63,6 @@
   transform: translate3d($x,$y,$z);
 }
 
-// http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ -- nr 3
-$image-path: '../img' !default;
-$fallback-extension: 'png' !default;
-$retina-suffix: '@2x';
-@mixin background-image($name, $size:false){
-	background-image: url(#{$image-path}/#{$name}.svg);
-	@if($size){
-	  background-size: $size;
-	}
-	.no-svg &{
-	  background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
-	
-	  @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-	    background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
-	  }
-	}
-}
-
 @mixin animation($animate...) {
   $max: length($animate);
   $animations: '';
@@ -111,6 +93,87 @@ $retina-suffix: '@2x';
   @keyframes #{$animationName} {
     @content;
   }
+}
+
+@mixin formText(){
+	@include type-to-em(12,48);
+	font-family: $bodyfont;
+	width: 100%;
+	padding: $body_leading/12+0em $body_leading/12+0em;
+	padding: 0 $leading;
+	
+	&::-webkit-input-placeholder { 
+    color: $subtle-text;
+	}
+		
+	&:-moz-placeholder { 
+	    color: $subtle-text;
+	    opacity: 1;
+	}
+		
+	&::-moz-placeholder {
+	    color:  $subtle-text;
+	    opacity: 1;
+	}
+		
+	&:-ms-input-placeholder {
+		  color: $subtle-text;
+	}
+	
+	&.inline{
+		display: inline-block;
+		width: auto;
+	}
+}
+
+@mixin formBtn(){
+	display: block;
+	@include type-to-em(14,21);
+	font-family: $captionfont;
+	width: 100%;
+	padding: 10/$alpha_bodysize+0em 0;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: $body;
+	background-color: $action;
+	
+	&.inline{
+		display: inline-block;
+		width: auto;
+		padding-right: $gutter_alpha;
+		padding-left: $gutter_alpha;
+		
+		@media all and (min-width: $beta_query) {
+			padding-right: $leading/2;
+			padding-left: $leading/2;
+		}
+		
+		@media all and (min-width: $charlie_query) {
+			padding-right: $leading;
+			padding-left: $leading;
+		}
+	}
+}
+
+@mixin iconAfter(){
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	z-index: 50;
+	transform: translate(-50%, -50%);
+	line-height: 1;
+	font-family: $icon-font;
+	text-indent: 0;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 

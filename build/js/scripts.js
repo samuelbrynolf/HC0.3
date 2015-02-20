@@ -168,6 +168,19 @@
 		}
 	}
 	
+	function jvc(){
+		$(window).on('resize', function(){
+			var screen = getActiveMQ();
+			if(screen = 'aq') return;
+			
+			$('.js-JVC').viewportChecker({
+    		classToAdd: 's-is-visible', 
+    		offset: 96,
+    		repeat: false
+			});		
+		}).trigger('resize');
+	}
+	
 	// FUNCTION CALLS -------------------------------------------------------------------------------------------------------
  	
  	tappyItems();
@@ -177,6 +190,7 @@
  	formInteractions();
  	trigByLoad();
  	fitvids();
+ 	jvc();
  	
  	// FALLBACKS -------------------------------------------------------------------------------------------------------
  	

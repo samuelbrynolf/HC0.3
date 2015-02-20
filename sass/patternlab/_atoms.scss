@@ -2,27 +2,6 @@
 
 // TEXT ==============================================================================================================
 
-// Webfontloader -----------------------------------------------------------------------------------------------------
-
-.a-xlarge,
-.a-large,
-.a-medium,
-.a-small{
-	font-family: $fallbackfont;
-}
-
-.wf-active{
-
-	.a-xlarge,
-	.a-large,
-	.a-medium,
-	.a-small{
-		font-family: $captionfont;
-	}
-}
-
-// -----------------------------------------------------------------------------------------------------
-
 .a-xlarge,
 .a-large,
 .a-medium,
@@ -147,19 +126,20 @@ a[href^="http://domain.com"] {
 
 input[type="text"],
 input[type="email"], 
-input[type="password"],
+input[type="tel"],
 .a-inputText{
-	@extend %formtext;
-	
-	&.inline{
-		@extend %inline;
-	}
+	@include formText();
 }
 
 .a-textarea,
 textarea{
-  @extend %formtext;
+ @include formText();
+ line-height: 1.5;
+ padding-top: 1.25em;
+ padding-bottom: 1.25em;
 }
+
+
 
 .a-input-descr{
 	@extend .a-fineprint;
@@ -230,13 +210,16 @@ textarea{
 // BUTTONS + EVENT-ELEMENTS ==============================================================================================================
 
 .a-btn,
-input[type="submit"].a-btn{
-	@extend %buttonStyle;
+input[type="submit"]{
+	@include formBtn();
 	
-	&.inline{
-		@extend %inline;
-		//padding-right: 24/$alpha_bodysize+0em;
-		//padding-left: 24/$alpha_bodysize+0em;
+	&.m-terms__a{
+		@include type-to-em(12,12);
+		
+		@media all and (min-width: $charlie_query) {
+			padding-right: $leading;
+			padding-left: $leading;
+		}
 	}
 }
 

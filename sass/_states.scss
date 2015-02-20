@@ -4,25 +4,25 @@
 // ACTIVE MQs
 //==============================================================================================================
 
-//#getActiveMQ-watcher {
-//  font-family: "aq";
+#getActiveMQ-watcher {
+  font-family: "aq";
   
-//  @media all and (min-width: $beta_query) {
-//  	font-family: "bq";
-//  }
+  @media all and (min-width: $beta_query) {
+  	font-family: "bq";
+  }
   
-//  @media all and (min-width: $charlie_query) {
-//  	font-family: "cq";
-//  }
+  @media all and (min-width: $charlie_query) {
+  	font-family: "cq";
+  }
   
-//  @media all and (min-width: $delta_query) {
-//  	font-family: "dq";
-//  }
+  @media all and (min-width: $delta_query) {
+  	font-family: "dq";
+  }
   
-//  @media all and (min-width: $echo_query) {
-//  	font-family: "eq";
-//  }
-//}
+  @media all and (min-width: $echo_query) {
+  	font-family: "eq";
+  }
+}
 
 
 
@@ -107,8 +107,6 @@ body:last-child .m-dropdown .a-select:focus {
 // IS-ACTIVE
 //==============================================================================================================
 
-
-
 .m-toggled.s-is-active .a-toggled__toggler{
 	
 	&:after{
@@ -145,13 +143,8 @@ body:last-child .m-dropdown .a-select:focus {
 
 
 
-
-
-
 // IS-MOVED
 //==============================================================================================================
-
-
 
 
 
@@ -171,6 +164,23 @@ body:last-child .m-dropdown .a-select:focus {
 	color: $subtle-text !important;
 	cursor: default !important;
 }
+
+
+// IS-VISIBLE + NO-JS
+//==============================================================================================================
+
+.js-JVC.s-is-visible,
+.no-js .js-JVC{
+	
+	&.example,
+	&.example-1{
+		opacity: 1;
+	}
+}
+
+// NO-JS
+//==============================================================================================================
+
 
 
 // TEMPLATE-STATES --> _templates.scss

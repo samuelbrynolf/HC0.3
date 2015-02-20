@@ -49,10 +49,10 @@ $echo_bodysize: 16;
 
 // 3 -----------------------------------------------------------------------------------------------------------
 
-$bodyfont: sans-serif;
-$captionfont: sans-serif;
-$compfont: sans-serif;
-$fallbackfont: sans-serif;
+$bodyfont: sans-serif, 'fallback-1', 'fallback-2';
+$captionfont: sans-serif, 'fallback-1', 'fallback-2';
+$compfont: sans-serif, 'fallback-1', 'fallback-2';
+$wfl-fallbackfont: sans-serif;
 $icon-font: 'icomoon';
 
 

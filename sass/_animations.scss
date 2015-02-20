@@ -1,32 +1,25 @@
-@charset "UTF-8";
 // TRANSITIONS
 //==============================================================================================================¨
 
 .transitions{
 	
-	.wfl body{
-		transition: opacity, 0.5s, ease-in-out;
-	}
-	
-	.parsley-errors-list{
-		transition: all, 0.1s, ease-in;
+	@media screen and (min-width: $charlie_query) {
+		.js-JVC{
+			transition: all 0.450s ease-in-out;
+		}
 	}
 	
   .example{
-		transition: transform, 0.2s, ease-out;
+		transition: transform 0.2s ease-out;
 	}
 	
 	.m-expand-section{
-		transition: max-height, 0.2s, ease-in;
-	}
-	
-	.a-btn{
-		transition: background, 0.06s, linear;
+		transition: max-height 0.2s ease-in;
 	}
 	
 	.m-expand-section.s-is-expanded:after,
 	.a-expand-section__button{
-		transition: opacity, 0.3s, linear;
+		transition: opacity 0.3s linear;
 	}
 	
 	.a-btn:focus{
@@ -38,7 +31,7 @@
 	input[type="password"],
 	input[type="submit"],
 	.a-inputText{
-		transition: border-color, 0.06s, ease-in-out;
+		transition: border-color 0.06s ease-in-out;
 	}
 	
 	.a-label:before,
@@ -46,7 +39,7 @@
 	p a,
 	.a-sitename,
 	.m-global-nav__a{
-		transition: all, 0.06s, ease-in-out;
+		transition: all 0.06s ease-in-out;
 	}
 }
 

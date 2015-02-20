@@ -1,1 +1,11 @@
-@charset "UTF-8";
+// jQuery-viewport-checker =========================================================================================================
+
+@media screen and (min-width: $charlie_query) {
+	.js-JVC{
+		
+		&.example,
+		&.example-1{
+			opacity: 0.1;
+		}
+	}
+}
