@@ -1,6 +1,6 @@
 //==============================================================================================================
 
-// RUN THEESE FIRST 										
+// ONLOAD PRIO									
 // FUNCTIONS						
 // FUNCTIONS CALLS
 // FALLBACKS
@@ -9,22 +9,30 @@
 
 (function() {
 	
-	// RUN THEESE FIRST  -----------------------------------------------------------------------------------------
+	// ONLOAD PRIO  ---------------------------------------------------------------------------------------------
 	
 	$('html').addClass('transitions');
 	
-	// Mediaqueried-scripts --------------------------------------------------------------------------------------
+	// Scripts by mediaquery --------------------------------------------------------------------------------------
 		
 	if($('#getActiveMQ-watcher').length){
 		var resizeTimeoutId = 0;
+		
+		function needed_for_alpha_example1(){
+			// Stuff
+		}
+		
+		function needed_for_alpha_example2(){
+			// Stuff
+		}
+		
 		function mediaChecker(){
 			var screen = getActiveMQ();
 			if(screen == 'aq'){
-				
-			} else {
-				
-			}
-		} // end mediaChecker
+				needed_for_alpha_example1();
+				needed_for_alpha_example2();
+			} 
+		} // end scripts by mediaquery
 		
 		mediaChecker();
 
