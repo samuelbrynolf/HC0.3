@@ -21,21 +21,27 @@
 			var viewPort = $(window);
 			var resizeTimeoutId = 0;
 			
-			function needed_for_alpha_example1(){
-				console.log('function run alpha-screen example1');
-			}
-			
-			function needed_for_alpha_example2(){
-				console.log('function run alpha-screen example2');
-			}
+			// erase placeholder—just for demo purpuose used in js-components.php
+				var placeholder = $('#js-mq-example');
+				var placeholderText = placeholder.text();
+				
+				function needed_for_demo_example1(){
+					placeholder.text('Yey! Alpha mode!');
+				}
+			// end erase
 			
 			function mediaChecker(){
 				var screen = getActiveMQ();
 				
-				if(screen == 'aq'){
-					needed_for_alpha_example1();
-					needed_for_alpha_example2();
-				}
+				// erase demo
+				$('#js-mq-currentexample').text('Current screen: ' + screen);
+				
+					if(screen == 'aq'){
+						needed_for_demo_example1();
+					} else {
+						placeholder.text(placeholderText);
+					}
+				// end erase
 				
 				if(!(screen == 'aq') && !(screen == 'bq')){
 					$('.js-JVC').viewportChecker({
@@ -70,7 +76,7 @@
         jQuerytarget = jQuerytarget.length && jQuerytarget || jQuery('[name=' + this.hash.slice(1) +']');
         if (jQuerytarget.length) {
         	var targetOffset = jQuerytarget.offset().top - 24 ;
-          $('html,body').animate({scrollTop: targetOffset}, 400);
+          $('html,body').animate({scrollTop: targetOffset}, 750);
           //e.preventDefault(); Eftersom vi kör tappy, dödas default automatiskt
          } 
        }

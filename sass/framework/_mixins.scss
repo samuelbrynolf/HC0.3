@@ -132,8 +132,9 @@
 	width: 100%;
 	padding: 10/$alpha_bodysize+0em 0;
 	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	//text-transform: uppercase;
+	//letter-spacing: 1px;
+	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 	color: $body;

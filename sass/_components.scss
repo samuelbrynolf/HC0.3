@@ -1,6 +1,15 @@
 .t-components{
-	margin: 0 auto;
+	margin: 8em auto 0 auto;
 	width: 60%;
+	
+	code{
+		display: inline;
+		font-size: 1.4em;
+		padding-left: 0.5em;
+		-webkit-font-smoothing: antialiased;
+	  text-rendering: optimizeLegibility;
+	  color: darken(orange, 5%);
+	}
 }
 
 .m-components{
@@ -9,9 +18,21 @@
 }
 
 .a-components__title{
-	 @include type-to-em(36,48);
+	 @include type-to-em(48,60);
 	 font-weight: bold;
 	 font-family: Aclonica;
+	 
+	 span{
+	 	color: $subtle-text;
+	 }
+}
+
+.a-components__sectiontitle{
+	 @include type-to-em(24,36);
+	 font-weight: bold;
+	 margin-bottom: 1.5em;
+	 padding-bottom: 1em;
+	 border-bottom: 1px solid;
 }
 
 .lib-overlay-container{

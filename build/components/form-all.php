@@ -1,4 +1,6 @@
 <section class="l-clearfix m-components">
+	<h2 class="a-components__sectiontitle">Formelements</h2>
+	
 	<form role="form" class="m-form" data-parsley-validate>
 	  <div class="form-group">
 	  	<label class="a-label block" for="exampleInputText">Forename</label>

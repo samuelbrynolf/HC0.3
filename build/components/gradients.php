@@ -1,4 +1,6 @@
 <section class="m-components">
+	<h2 class="a-components__sectiontitle">Gradients</h2>
+	
 	<div class="lib-color gradient">
 		<p>Primary gradient</p>
 	</div>

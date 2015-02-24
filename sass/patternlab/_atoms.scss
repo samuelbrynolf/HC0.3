@@ -5,7 +5,8 @@
 .a-medium,
 .a-small,
 strong,
-.a-sitename{
+.a-sitename,
+strong{
 	-webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   	
@@ -39,11 +40,16 @@ strong,
 
 a{
 	color: $action;
+	text-decoration: none;
 }
 
-em{}
+em{
+	font-style: italic;
+}
 
-strong{}
+strong{
+	font-weight: 700;
+}
 
 p + p{
 	margin-top: $leading;
@@ -103,6 +109,12 @@ a[href^="http://domain.com"] {
 		only screen and (                min-resolution: 2dppx) {
 			background-image: url(img/logo_hires.png);		
 	}
+}
+
+img.lazyload,
+img.lazyloaded,
+img.forcewidth{
+	width: 100%;
 }
 
 // FORMS ==============================================================================================================
