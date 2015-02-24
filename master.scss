@@ -1,4 +1,5 @@
 @import "sass/__settings";
+
 @import "sass/framework/_variables_calc";
 @import "sass/framework/_mixins";
 @import "sass/framework/_reset";
@@ -7,6 +8,7 @@
 @import "sass/framework/_base_framework";
 @import "sass/framework/_layout";
 @import "sass/framework/_extends_placeholders";
+
 @import "sass/patternlab/_atoms";
 @import "sass/patternlab/_molecules";
 @import "sass/patternlab/_organisms";
