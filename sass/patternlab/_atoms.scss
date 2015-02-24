@@ -1,13 +1,9 @@
-@charset "UTF-8";
-
 // TEXT ==============================================================================================================
 
 .a-xlarge,
 .a-large,
 .a-medium,
 .a-small,
-%formtext,
-%buttonStyle,
 strong,
 .a-sitename{
 	-webkit-font-smoothing: antialiased;
@@ -20,7 +16,7 @@ strong,
 }
 
 .a-xlarge{
-	@include type-to-em(74,86);
+	// @include type-to-em(74,86);
 }
 
 .a-large{}
@@ -30,20 +26,18 @@ strong,
 .a-small{}
 
 .a-preamble{
-	@include type-to-em(24,36);
 	
 	p{
-		font-size: 1;
+		font-size: inherit;
 		line-height: inherit;
 	}
 }
 
 .a-fineprint{
-	@include type-to-em(12,18);
+	font-size: small;
 }
 
 a{
-	text-decoration: none;
 	color: $action;
 }
 
@@ -82,12 +76,14 @@ a[href^="http://domain.com"] {
 
 .a-ol{
 	list-style-type: decimal-leading-zero;
+	margin-left: 2em;
 	
 	li{}
 }
 
 .a-ul{
 	list-style-type: disc;
+	margin-left: 2em;
 	
 	li{}
 }
@@ -95,20 +91,9 @@ a[href^="http://domain.com"] {
 
 // IMAGES + VIDEO/MEDIA =============================================================================================================
 
-
-
-
 .a-sitename{
-	//@extend %ir;
-	//width: 280px;
-	//height: $leading*3;
-	//background: {
-		//color: white;
-		//size: 200px 200px;
-		//image: url(img/logo.png);
-		//repeat: no-repeat;
-		//position: top center;
-	//}
+	@include swap_text_for_img(100,100);
+	background-image: url(img/logo.png);
 	
 	@media only screen and (-webkit-min-device-pixel-ratio: 2),
 		only screen and (   min--moz-device-pixel-ratio: 2),
@@ -116,11 +101,9 @@ a[href^="http://domain.com"] {
 		only screen and (        min-device-pixel-ratio: 2),
 		only screen and (                min-resolution: 192dpi),
 		only screen and (                min-resolution: 2dppx) {
-		//background-image: url(img/logo_hires.png);		
+			background-image: url(img/logo_hires.png);		
 	}
 }
-
-
 
 // FORMS ==============================================================================================================
 
@@ -191,7 +174,7 @@ textarea{
 }
 
 .a-select {
- 	@extend %formtext;
+ 	 @include formText();
  	border: 1px solid transparent;
  	font-size: ($alpha_bodysize)+0px;
  	line-height: $body_leading+0px;
@@ -212,15 +195,6 @@ textarea{
 .a-btn,
 input[type="submit"]{
 	@include formBtn();
-	
-	&.m-terms__a{
-		@include type-to-em(12,12);
-		
-		@media all and (min-width: $charlie_query) {
-			padding-right: $leading;
-			padding-left: $leading;
-		}
-	}
 }
 
 .a-toggled__toggler{

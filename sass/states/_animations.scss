@@ -1,0 +1,94 @@
+// TRANSITIONS
+//==============================================================================================================¨
+
+.transitions{
+	
+	@media screen and (min-width: $charlie_query) {
+		.js-JVC{
+			transition: all 0.450s ease-in-out;
+		}
+	}
+	
+  .example-transform{
+		transition: transform 0.2s ease-out;
+	}
+	
+	.m-expand-section{
+		transition: max-height 0.2s ease-in;
+	}
+	
+	.m-expand-section.s-is-expanded:after,
+	.a-expand-section__button,
+	.js-imgLoader{
+		transition: opacity 0.3s ease-in-out;
+	}
+	
+	.a-btn:focus{
+		transition-property: none;
+	}
+	
+	input[type="text"],
+	input[type="email"], 
+	input[type="password"],
+	input[type="submit"],
+	.a-inputText{
+		transition: border-color 0.06s ease-in-out;
+	}
+	
+	.a-label:before,
+	.a-label,
+	p a,
+	.a-sitename,
+	.m-global-nav__a{
+		transition: all 0.06s ease-in-out;
+	}
+}
+
+
+// KEYFRAME ANIMATIONS
+// http://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+//==============================================================================================================
+
+.a-label.s-is-checked:before {
+	@include animation('iconlove .2s 1');
+}
+
+@include keyframes(iconlove) {
+	20%{ 
+		transform: translate3d(-0.1em,0,0) rotate(1turn) scale(1.1); 
+	}
+}
+
+//LOADER ANIMATIONS: http://tobiasahlin.com/spinkit/
+
+.js-loader{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 0;
+	transform: translate(-50%,-50%);
+  width: 30px;
+  height: 30px;
+  background-color: $action;
+  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}

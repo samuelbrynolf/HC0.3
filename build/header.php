@@ -47,12 +47,14 @@
 	
 	<body>
 
-		<header id="js-global-header" class="o-global-header" role="banner">
+		<!--
+<header id="js-global-header" class="o-global-header" role="banner">
 			<nav id="js-global-nav" class="m-global-nav" role="navigation">
 				<a href="#">Link</a>
 				<a href="#">Link</a>
 				<a href="#">Link</a>
 			</nav>
 		</header>
+-->
 		
 		

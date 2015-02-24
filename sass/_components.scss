@@ -3,12 +3,19 @@
 	width: 60%;
 }
 
+.m-components{
+	@extend .row;
+	position: relative;
+}
+
+.a-components__title{
+	 @include type-to-em(36,48);
+	 font-weight: bold;
+	 font-family: Aclonica;
+}
+
 .lib-overlay-container{
 	position: relative;
-	
-	img{
-		width: 100%;
-	}
 }
 
 .lib-color{
@@ -31,16 +38,15 @@
 	}
 	
 	&.gradient{
-		@extend %gradient;
+		@include gradient();
 	}
 	
 	&.gradient-overlay{
-		@extend %overlay;
+		@extend .overlay;
 		padding-top: 10%;
-		@extend %gradient_rgba;
 	}
 	
 	&.gradient-complementary{
-		@extend %gradient_complementary;
+		@include multigradient();
 	}
 }

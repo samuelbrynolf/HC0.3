@@ -1,10 +1,11 @@
 (function($,window){
+
+	$('<div id="getActiveMQ-watcher"></div>')
+		.appendTo('body')
+		.hide();
   
   window.getActiveMQ = function()
 	{
-		$('<div id="getActiveMQ-watcher"></div>')
-			.appendTo('body')
-			.hide();
 	
 		var computed = window.getComputedStyle,
 			watcher = document.getElementById('getActiveMQ-watcher');

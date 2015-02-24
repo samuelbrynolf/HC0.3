@@ -31,19 +31,9 @@
 
 .a-btn:hover,
 input[type="submit"].a-btn:hover{
-	color: $body;
-	background-color: $action; 
 	pointer: cursor;
 }
 
-.a-sitename:hover,
-.m-global-nav__a:hover,
-.a-user-login:hover,
-p a:hover,
-.a-label:hover,
-.a-label.s-is-checked:hover{
-	text-decoration: underline;
-}
 
 
 
@@ -60,7 +50,6 @@ input[type="password"]:focus,
 
 input[type="submit"].a-btn:focus,
 .a-btn:focus {
-	color: white;
 	border-color: darken($action, 25%);
 	background-color: darken($action, 25%);
 }
@@ -75,11 +64,6 @@ body:last-child .m-dropdown .a-select:focus {
 .a-select:-moz-focusring {
  	color: transparent;
   text-shadow: 0 0 0 #000;
-}
-
-.m-table.editable td:focus{
-	color: #000;
-	background-color: $msg-active;
 }
 
 
@@ -165,6 +149,10 @@ body:last-child .m-dropdown .a-select:focus {
 	cursor: default !important;
 }
 
+.js-imgLoader.s-is-hidden{
+	visibility: hidden;
+	opacity: 0;
+}
 
 // IS-VISIBLE + NO-JS
 //==============================================================================================================
@@ -172,7 +160,7 @@ body:last-child .m-dropdown .a-select:focus {
 .js-JVC.s-is-visible,
 .no-js .js-JVC{
 	
-	&.example,
+	&.m-components,
 	&.example-1{
 		opacity: 1;
 	}

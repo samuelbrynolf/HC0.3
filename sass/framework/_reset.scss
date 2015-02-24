@@ -93,13 +93,10 @@ textarea {
 	background:transparent;
 }
 
-img{
-	display: block;
-}
-
 img,
 object,
 embed {
+	display: block;
   max-width: 100%;
   height: auto;
 }

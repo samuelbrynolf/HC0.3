@@ -1,4 +1,4 @@
-<section class="l-clearfix">
+<section class="l-clearfix m-compontents">
 	<div class="lib-color action">
 		<p>Action/Link</p>
 	</div>

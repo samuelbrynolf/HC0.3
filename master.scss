@@ -1,13 +1,18 @@
-@charset "UTF-8"; //Set the charset to UTF-8
-@import "sass/project/_settings";
+@import "sass/__settings";
 @import "sass/framework/_variables_calc";
 @import "sass/framework/_mixins";
-
 @import "sass/framework/_reset";
-@import "sass/_fonts";
+@import "sass/framework/_fonts";
+@import "sass/framework/_plugins";
 @import "sass/framework/_base_framework";
 @import "sass/framework/_layout";
-@import "sass/project/_extends_placeholders";
+@import "sass/framework/_extends_placeholders";
 @import "sass/patternlab/_atoms";
+@import "sass/patternlab/_molecules";
+@import "sass/patternlab/_organisms";
+@import "sass/patternlab/_templates";
+@import "sass/patternlab/_pages";
+@import "sass/states/_animations";
+@import "sass/states/_states";
 
-@import "sass/project/_project";
+@import "sass/_components";

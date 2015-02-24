@@ -8,8 +8,9 @@ echo '<div class="t-components">';
 	include('components/text.php'); 
 	include('components/lists.php'); 
 	include('components/form-all.php'); 
-	include('components/form-buttons.php'); 
-	include('components/interactions.php');
-	include('components/blocks.php');
+	include('components/buttons.php');
+	
+	echo '<section class="m-components"><a href="components-js.php">Javascript interactions</a></section>';
+	
 echo '</div>';
 include('footer.php');?> 

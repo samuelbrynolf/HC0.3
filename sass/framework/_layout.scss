@@ -25,6 +25,14 @@
 // LAYOUT HELP-CLASSES
 //==============================================================================================================
 
+.l-row{
+	padding: $leading 0;
+	
+	@media screen and (min-width: $beta_query) {
+		padding: $leading*2 0 $leading*3;
+	}
+}
+
 .l-pull-right{
 	float: right;
 }

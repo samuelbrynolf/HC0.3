@@ -47,22 +47,6 @@
 }
 
 
-@mixin translate($x:0, $y:0){
-  -moz-transform: translate($x,$y);
-  -ms-transform: translate($x,$y);
-  -o-transform: translate($x,$y);
-  -webkit-transform: translate($x,$y);
-  transform: translate($x,$y);
-}
-
-@mixin translate3d($x:0, $y:0, $z:0){
-  -moz-transform: translate3d($x,$y,$z);
-  -ms-transform: translate3d($x,$y,$z);
-  -o-transform: translate3d($x,$y,$z);
-  -webkit-transform: translate3d($x,$y,$z);
-  transform: translate3d($x,$y,$z);
-}
-
 @mixin animation($animate...) {
   $max: length($animate);
   $animations: '';
@@ -95,12 +79,27 @@
   }
 }
 
+@mixin swap_text_for_img($sizeX:0, $sizeY:0){
+	display: block;
+	text-indent: -9999px;
+	width: $sizeX+0px;
+	height: $sizeY+0px;
+	background: {
+		color: white;
+		size: $sizeX+0px $sizeY+0px;
+		repeat: no-repeat;
+		position: center center;
+	}
+}
+
 @mixin formText(){
 	@include type-to-em(12,48);
 	font-family: $bodyfont;
 	width: 100%;
 	padding: $body_leading/12+0em $body_leading/12+0em;
 	padding: 0 $leading;
+	-webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 	
 	&::-webkit-input-placeholder { 
     color: $subtle-text;
@@ -135,6 +134,8 @@
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	-webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 	color: $body;
 	background-color: $action;
 	
@@ -177,17 +178,14 @@
 }
 
 
+@mixin gradient($startcolor: $startcolor_simple, $stopcolor: $stopcolor_simple, $fallbackGradient: $gradient_nosupport){
+	background-color: $fallbackGradient;
+	background-image: linear-gradient(to bottom, $startcolor, $stopcolor);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#{$startcolor}', EndColorStr='#{$stopcolor}');
+}
 
-// MULTIGRADIENT
-//==============================================================================================================
-
-@mixin multigradient($firstC: $gradient_top, $secondC: $gradient_33, $thirdC: $gradient_66, $fourthC: $gradient_bottom){
-	background: $thirdC;
-	//background: -moz-linear-gradient(top,  $firstC 0%, $secondC 45%, $thirdC 67%, $fourthC 100%);
-	//background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$firstC), color-stop(33%,$secondC), color-stop(67%,$thirdC), color-stop(100%,$fourthC));
-	//background: -webkit-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
-	//background: -o-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
-	//background: -ms-linear-gradient(top,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
-	background: linear-gradient(to bottom,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$firstC}', endColorstr='#{$fourthC}',GradientType=0 );
+@mixin multigradient($firstC: $startcolor_multi, $secondC: $secondcolor_multi, $thirdC: $thirdcolor_multi, $fourthC: $stopcolor_multi){
+	background-color: $thirdC;
+	background-image: linear-gradient(to bottom,  $firstC 0%,$secondC 45%,$thirdC 67%,$fourthC 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{$firstC}', endColorstr='#{$fourthC}');
 }

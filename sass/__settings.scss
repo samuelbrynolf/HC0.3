@@ -59,23 +59,35 @@ $icon-font: 'icomoon';
 
 // 4 -----------------------------------------------------------------------------------------------------------
 
-$body: #002740;
-$bodycolor: #333333;
+// Color scheme
 
-$action: #FFCA59;
+$body: #eee;
+$bodycolor: #212121;
+$action: blue;
 $primary: red;
 $secondary: green;
 $complementary: #006EB0;
 
 $subtle-bg: #f4f4f4;
-$subtle-text: #999;
+$subtle-text: #888;
 
-$gradleft: rgb(219, 86, 149);
-$gradright: rgb(255, 202, 149);
-$gradleft-rgba: rgba(219, 86, 149, 0.65);
-$gradright-rgba: rgba(255, 202, 149, 0.65);
+//Gradients
+
+$startcolor_simple: $primary;
+$stopcolor_simple: $secondary;
+
+$startcolor_multi: $startcolor_simple;
+$secondcolor_multi: $action;
+$thirdcolor_multi: $complementary;
+$stopcolor_multi: $stopcolor_simple;
+
+$gradient_nosupport: $primary;
+
+// Form
 
 $form-border-color: lighten($subtle-text, 10%);
+
+// Alerts
 
 $msg-ok: #308490;
 $msg-ok-bg: lighten($msg-ok, 50%);
@@ -83,7 +95,6 @@ $msg-error: #B94A48;
 $msg-error-bg: #F2DEDE;
 $msg-active: $msg-ok-bg;
 $highlight: lighten($complementary, 28%);
-
 
 
 // 5 -----------------------------------------------------------------------------------------------------------

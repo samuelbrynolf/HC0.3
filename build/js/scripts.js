@@ -13,52 +13,54 @@
 	
 	$('html').addClass('transitions');
 	
-	// Scripts by mediaquery --------------------------------------------------------------------------------------
-		
-	if($('#getActiveMQ-watcher').length){
-		var resizeTimeoutId = 0;
-		
-		function needed_for_alpha_example1(){
-			// Stuff
-		}
-		
-		function needed_for_alpha_example2(){
-			// Stuff
-		}
-		
-		function mediaChecker(){
-			var screen = getActiveMQ();
-			if(screen == 'aq'){
-				needed_for_alpha_example1();
-				needed_for_alpha_example2();
-			} 
-		} // end scripts by mediaquery
-		
-		mediaChecker();
-
-		viewPort.on('resize', function(){
-			clearTimeout(resizeTimeoutId);
-			resizeTimeoutId = setTimeout(mediaChecker,300);
-		});
-	}
-	
 	// FUNCTIONS -------------------------------------------------------------------------------------------------------
+	
+	function mq_scripts(){
+		if($('#getActiveMQ-watcher').length){
+		
+			var viewPort = $(window);
+			var resizeTimeoutId = 0;
+			
+			function needed_for_alpha_example1(){
+				console.log('function run alpha-screen example1');
+			}
+			
+			function needed_for_alpha_example2(){
+				console.log('function run alpha-screen example2');
+			}
+			
+			function mediaChecker(){
+				var screen = getActiveMQ();
+				
+				if(screen == 'aq'){
+					needed_for_alpha_example1();
+					needed_for_alpha_example2();
+				}
+				
+				if(!(screen == 'aq') && !(screen == 'bq')){
+					$('.js-JVC').viewportChecker({
+		    		classToAdd: 's-is-visible', 
+		    		offset: 96,
+		    		repeat: false
+					});
+				}	
+				
+			} // end mediaChecker
+						
+			mediaChecker();
+			
+			viewPort.on('resize', function(){
+				clearTimeout(resizeTimeoutId);
+				resizeTimeoutId = setTimeout(mediaChecker,300);
+			});
+		}
+	}
 	
 	function tappyItems(){	
 		$('a.tappilyTap').bind('tap', function(e){
 			window.location=e.target.href;
 		});
 	} // end tappyItems()
-	
-	function elementToLink(){
-		var tapTarget = $('.js-tapTarget');
-		if(tapTarget.length){
-	 		tapTarget.bind('tap', function(){
-	 			var $this = $(this);
-	  		window.location=$this.find('a.js-tapSrc').attr('href');
-			});
-		}
-	} // end elementTolink
 	
 	function smoothScroll(){
   	$('.js-jumper').bind('tap', function(e){
@@ -150,21 +152,31 @@
 	}
 	
 	function trigByLoad(){
-		if($('.js-trigParent').length){
-			var triggedParentArr = $('.js-trigParent');
+		if($('.js-imgLoader').length){
+		
+			var imgLoader = $('.js-imgLoader');
 			
-			triggedParentArr.each(function(i){
+			imgLoader.each(function(i){
 				var $this = $(this);
 				var posterImg = $this.find('img').eq(0);
 				var image = new Image();
-	
+				var bgLoader = $this.attr('data-loader');
+				
+				if(bgLoader == 'true'){
+					var loadElem = $('<p class="js-loader"></p>');
+					$this.parent().css('position', 'relative');
+					$this.parent().append(loadElem);
+				}
+				
 				$(image).on('load', function(){ 
-					$this.parent(triggedParentArr).removeClass('s-is-hidden');
+					setTimeout(function(){
+						loadElem.fadeOut('fast');
+						$this.removeClass('s-is-hidden');
+					}, i*300);
 				});
 				
-				setTimeout(function(){ 
-					image.src = posterImg.attr('src'); 
-				}, i*150);
+				image.src = posterImg.attr('src');
+				
 			});
     }
 	}
@@ -176,21 +188,9 @@
 		}
 	}
 	
-	function jvc(){
-		$(window).on('resize', function(){
-			var screen = getActiveMQ();
-			if(screen = 'aq') return;
-			
-			$('.js-JVC').viewportChecker({
-    		classToAdd: 's-is-visible', 
-    		offset: 96,
-    		repeat: false
-			});		
-		}).trigger('resize');
-	}
-	
 	// FUNCTION CALLS -------------------------------------------------------------------------------------------------------
  	
+	mq_scripts();
  	tappyItems();
  	smoothScroll();
  	toggleElems();
@@ -198,19 +198,14 @@
  	formInteractions();
  	trigByLoad();
  	fitvids();
- 	jvc();
  	
  	// FALLBACKS -------------------------------------------------------------------------------------------------------
  	
 	setTimeout(function(){
  		var wflObjects = [
 	 		
-	 		'.a-xlarge', 
-	 		'.a-medium', 
-	 		'.m-content h2', 
-	 		'h3', 
-	 		'h4', 
-	 		'blockquote'
+	 		'.a-components__title', 
+	 		'.example-2'
  		
  		].join(', ');
 
