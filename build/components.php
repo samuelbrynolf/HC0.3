@@ -9,7 +9,7 @@ echo '<div class="t-components">';
 	include('components/lists.php'); 
 	include('components/form-all.php'); 
 	include('components/buttons.php');
-	include('components/gridded_boxes.php');
+	include('components/gridview.php');
 	
 	echo '<section class="m-components"><a href="components-js.php">Javascript interactions</a></section>';
 	

@@ -42,6 +42,8 @@ input[type="submit"].a-btn:hover{
 // FOCUS
 //==============================================================================================================
 
+// Form focus
+
 input[type="text"]:focus,
 input[type="email"]:focus, 
 input[type="password"]:focus,
@@ -50,8 +52,11 @@ input[type="password"]:focus,
 	border-color: $form-border-color;
 }
 
+// Button focus 
+
 input[type="submit"].a-btn:focus,
 .a-btn:focus {
+	color: $body;
 	border-color: darken($action, 25%);
 	background-color: darken($action, 25%);
 }
@@ -103,13 +108,22 @@ body:last-child .m-dropdown .a-select:focus {
 .o-modal.s-is-active{
 	visibility: visible;
 	opacity: 1;
-	z-index: 100;
+	z-index: 300;
 	pointer-events: auto;
 	
 	.m-modal__popup{
-		z-index: 200;
+		z-index: 400;
 		pointer-events: auto;
 	}
+	
+	.a-modal__btn{
+		z-index: 500;
+	}
+}
+
+.m-alert.s-is-active{
+	visibility: visible;
+	opacity: 1;
 }
 
 

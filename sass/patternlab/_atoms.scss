@@ -6,7 +6,8 @@
 .a-small,
 strong,
 .a-sitename,
-strong{
+strong,
+.overlay-item{
 	-webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   	
@@ -115,6 +116,12 @@ img.lazyload,
 img.lazyloaded,
 img.forcewidth{
 	width: 100%;
+}
+
+@media all and (min-width: $beta_query) {
+	.js .js-medialoadEffect img{
+		opacity: 0;
+	}
 }
 
 // FORMS ==============================================================================================================

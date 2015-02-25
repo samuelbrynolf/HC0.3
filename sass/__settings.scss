@@ -91,14 +91,15 @@ $form-border-color: lighten($subtle-text, 10%);
 
 $msg-ok: #308490;
 $msg-ok-bg: lighten($msg-ok, 50%);
-$msg-error: #B94A48;
-$msg-error-bg: #F2DEDE;
+$msg-warning: #B94A48;
+$msg-warning-bg: #F2DEDE;
 $msg-active: $msg-ok-bg;
 $highlight: lighten($complementary, 28%);
 
 
 // 5 -----------------------------------------------------------------------------------------------------------
 
+$rounded: 6px;
 
 
 // 6 -----------------------------------------------------------------------------------------------------------

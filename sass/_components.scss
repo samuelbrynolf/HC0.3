@@ -11,79 +11,88 @@
 	  text-rendering: optimizeLegibility;
 	  color: darken(orange, 5%);
 	}
-}
+	
+	.a-btn + .a-btn{
+		margin-top: $leading;
+	}
 
-.m-components{
-	@extend .row;
-	position: relative;
-}
 
-.a-components__title{
-	 @include type-to-em(48,60);
-	 font-weight: bold;
-	 font-family: Aclonica;
-	 
-	 span{
-	 	color: $subtle-text;
-	 }
-	 
-	 code{
-	 	padding-left: 0.5em;
-	 }
-}
-
-.a-components__sectiontitle{
-	 @include type-to-em(24,36);
-	 font-weight: bold;
-	 margin-bottom: 1.5em;
-	 padding-bottom: 1em;
-	 border-bottom: 1px solid;
-}
-
-.m-compontents__subtle_example{
-	color: $subtle-text;
-}
-
-.lib-overlay-container{
-	position: relative;
-}
-
-.lib-color{
-	height: 5.3rem;
-	padding: 2rem 0;
-	text-align: center;
-	color: $body;
-	
-	&.action{
-		background: $action;
+	.m-components{
+		@extend .row;
+		position: relative;
 	}
 	
-	&.primary{
-		background: $primary;
+	.a-components__title{
+		 @include type-to-em(48,60);
+		 font-weight: bold;
+		 font-family: Aclonica;
+		 
+		 span{
+		 	color: $subtle-text;
+		 }
+		 
+		 code{
+		 	padding-left: 0.5em;
+		 }
 	}
 	
-	&.secondary{
-		background: $secondary;
+	.a-components__sectiontitle{
+		 @include type-to-em(24,36);
+		 font-weight: bold;
+		 margin-bottom: 1.5em;
+		 padding-bottom: 1em;
+		 border-bottom: 1px solid;
+		 
+		 a{
+		 	font-weight: inherit;
+		 }
 	}
 	
-	&.complementary{
-		background: $complementary;
+	.m-compontents__subtle_example{
+		color: $subtle-text;
 	}
 	
-	&.subtle{
-		color: $bodycolor;
-		background: $subtle-bg;
+	.lib-overlay-container{
+		position: relative;
 	}
 	
-	&.gradient{
-		@include gradient();
+	.lib-color{
+		height: 5.3rem;
+		padding: 2rem 0;
+		text-align: center;
+		color: $body;
+		
+		&.action{
+			background: $action;
+		}
+		
+		&.primary{
+			background: $primary;
+		}
+		
+		&.secondary{
+			background: $secondary;
+		}
+		
+		&.complementary{
+			background: $complementary;
+		}
+		
+		&.subtle{
+			color: $bodycolor;
+			background: $subtle-bg;
+		}
+		
+		&.gradient{
+			@include gradient();
+		}
+		
+		&.gradient-overlay{
+			@extend .overlay;
+		}
+		
+		&.gradient-complementary{
+			@include multigradient();
+		}
 	}
-	
-	&.gradient-overlay{
-		@extend .overlay;
-	}
-	
-	&.gradient-complementary{
-		@include multigradient();
-	}
-}
+} // end .t-components

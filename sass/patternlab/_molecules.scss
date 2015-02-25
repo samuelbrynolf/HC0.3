@@ -1,5 +1,3 @@
-
-
 // FORMS =============================================================================================================
 
 .m-dropdown__wrap {
@@ -71,20 +69,7 @@ x:-o-prefocus,
   display: none;
 }
 
-
-
-// WP =============================================================================================================
-// Import from wp-starter/helpers
-
-
-// MEDIA =============================================================================================================
-
-
-
-// COMPONENTS =============================================================================================================
-
-
-// INTERACTIVE COMPONENTS =============================================================================================================
+// SHOW / HIDE COMPONENTS =============================================================================================================
 
 .m-toggled__elem {
   padding: $leading 0;
@@ -109,11 +94,13 @@ x:-o-prefocus,
   }
 }
 
+// MESSAGING =============================================================================================================
+
 .m-modal__popup{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	z-index: 600;
+	z-index: -400;
 	transform: translate(-50%, -50%);
 	width: 90%;
 	max-width: 45em;
@@ -136,7 +123,7 @@ x:-o-prefocus,
 	
 	.a-modal__btn{
 		position: absolute;
-		z-index: 250;
+		z-index: -300;
 		top: $gutter_alpha_half;
 		right: $gutter_alpha_half;
 		
@@ -148,6 +135,102 @@ x:-o-prefocus,
 		@media all and (min-width: $charlie_query) {
 			top: $gutter_charlie_half;
 			right: $gutter_charlie_half;
+		}
+	}
+}
+
+.m-alert{
+	visibility: 0;
+	position: fixed;
+	top: $leading*2;
+	left: 50%;
+	z-index: 600;
+	transform: translate(-50%, 0);
+	width: 90%;
+	max-width: 45em;
+	padding: $leading;
+	border-radius: ($body_leading*2)/$alpha_bodysize+0em;
+	color: $body;
+	text-align: center;
+	opacity: 0;
+	background: rgba($bodycolor, 0.94);
+	//box-shadow: 0 0 8px rgba($bodycolor, 0.14);
+	pointer-events: none;
+	
+	p{}
+}
+
+.m-alert,
+.m-modal__popup{
+
+	&.warning{
+		color: $msg-warning;
+		background-color: $msg-warning-bg;
+	}
+	
+	&.ok{
+		color: $msg-ok;
+		background-color: $msg-ok-bg;
+	}
+}
+
+// GRIDVIEW =============================================================================================================
+
+.m-gridview__item{
+	position: relative;
+	float: left;
+	width: 50%;
+	
+	@media all and (min-width: $beta_query) {
+		width: 33%;
+	}
+	
+	@media all and (min-width: $charlie_query) {
+		width: 25%;
+	}
+	
+	@media all and (min-width: $delta_query) {
+		width: 20%;
+	}
+	
+	@media all and (min-width: $echo_query) {
+		width: 16.6%;
+	}
+	
+	.m-gridview__centered{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+		
+		&.overlay-item{
+			color: $body;
+			background: rgba(0,0,0,0.3);
+		}
+	}
+	
+	.a-gridview__centered__text{
+		position: absolute;
+		top: 50%;
+		z-index: 20;
+		left: $alpha_gutter / $alpha_bodysize +0rem;
+		right: $alpha_gutter / $alpha_bodysize +0rem;
+		transform: translate(0, -50%);
+		@include type-to-vmin(13, 3, 1.5);
+		text-align: center;
+		
+		@media all and (min-width: $beta_query) {
+			left: $beta_gutter / $alpha_bodysize +0rem;;
+			right: $beta_gutter / $alpha_bodysize +0rem;;
+			@include type-to-vmin(13, 1.75, 1.5);
+		}
+		
+		@media all and (min-width: $charlie_query) {
+			left: $body_leading / $alpha_bodysize +0rem;;
+			right: $body_leading / $alpha_bodysize +0rem;;
+			@include type-to-vmin(13, 1.75, 1.5);
 		}
 	}
 }

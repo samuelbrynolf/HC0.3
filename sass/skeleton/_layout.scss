@@ -42,30 +42,29 @@
 }
 
 .l-gutter{
-	padding-right:$gutter_alpha;
-	padding-left:$gutter_alpha;
+	padding-right: $gutter_alpha;
+	padding-left: $gutter_alpha;
 	
 	@media screen and (min-width: $beta_query) {
-		padding-right:$gutter_beta;
-		padding-left:$gutter_beta;
+		padding-right: $gutter_beta;
+		padding-left: $gutter_beta;
 	}
 	
 	@media screen and (min-width: $charlie_query) {
-		padding-right:$gutter_charlie;
-		padding-left:$gutter_charlie;
+		padding-right: $gutter_charlie;
+		padding-left: $gutter_charlie;
 	}
 	
 	@media screen and (min-width: $delta_query) {
-		padding-right:$gutter_delta;
-		padding-left:$gutter_delta;
+		padding-right: $gutter_delta;
+		padding-left: $gutter_delta;
 	}
 	
 	@media screen and (min-width: $echo_query) {
-		padding-right:$gutter_echo;
-		padding-left:$gutter_echo;
+		padding-right: $gutter_echo;
+		padding-left: $gutter_echo;
 	}
 }
-
 
 
 // ALPHA

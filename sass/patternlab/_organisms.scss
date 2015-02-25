@@ -1,41 +1,5 @@
-@charset "UTF-8";
 
-// GLOBAL =============================================================================================================
-
-// header
-// footer
-// aside
-
-.o-global__header{}
-
-.o-global__footer{}
-
-.o-global__aside{}
-
-
-
-// ARTICLE =============================================================================================================
-
-.o-article__header{}
-
-.o-article__footer{}
-
-.o-article__aside{}
-
-
-// BLOCKS =============================================================================================================
-
-.o-pageSection{}
-
-
-
-// COMMENTS =============================================================================================================
-
-// comment thread
-
-
-
-// SECTIONS =============================================================================================================
+// MESSAGING =============================================================================================================
 
 .o-modal{
 	visibility: hidden;
@@ -56,13 +20,104 @@
 }
 
 
-// WIDGETFIELDS =============================================================================================================
+// GRIDVIEW =============================================================================================================
 
-.o-contacts{
+.o-gridview{
+	@extend .l-clearfix;
+	
+	&.padded{
+		margin-right: -$gutter_alpha_half;
+		margin-left: -$gutter_alpha_half;
+		
+		@media all and (min-width: $beta_query) {
+			margin-right: -$gutter_beta_half;
+			margin-left: -$gutter_beta_half;
+		}
+		
+		@media all and (min-width: $charlie_query) {
+			margin-right: -$gutter_charlie_half;
+			margin-left: -$gutter_charlie_half;
+		}
+		
+		@media all and (min-width: $delta_query) {
+			margin-right: -$gutter_delta_half;
+			margin-left: -$gutter_delta_half;
+		}
+		
+		@media all and (min-width: $echo_query) {
+			margin-right: -$gutter_echo_half;
+			margin-left: -$gutter_echo_half;
+		}
+		
+		.m-gridview__item{
+			padding: $gutter_alpha_half;
+			
+			@media all and (min-width: $beta_query) {
+				padding: $gutter_beta_half;
+			}
+			
+			@media all and (min-width: $charlie_query) {
+				padding: $gutter_charlie_half;
+			}
+			
+			@media all and (min-width: $delta_query) {
+				padding: $gutter_delta_half;
+			}
+			
+			@media all and (min-width: $echo_query) {
+				padding: $gutter_echo_half;
+			}
+		}
+		
+		.m-gridview__centered{
+			top: $gutter_alpha_half;
+			right: $gutter_alpha_half;
+			bottom: $gutter_alpha_half;
+			left: $gutter_alpha_half;
+			
+			@media all and (min-width: $beta_query) {
+				top: $gutter_beta_half;
+				right: $gutter_beta_half;
+				bottom: $gutter_beta_half;
+				left: $gutter_beta_half;
+			}
+			
+			@media all and (min-width: $charlie_query) {
+				top: $gutter_charlie_half;
+				right: $gutter_charlie_half;
+				bottom: $gutter_charlie_half;
+				left: $gutter_charlie_half;
+			}
+			
+			@media all and (min-width: $delta_query) {
+				top: $gutter_delta_half;
+				right: $gutter_delta_half;
+				bottom: $gutter_delta_half;
+				left: $gutter_delta_half;
+			}
+			
+			@media all and (min-width: $echo_query) {
+				top: $gutter_echo_half;
+				right: $gutter_echo_half;
+				bottom: $gutter_echo_half;
+				left: $gutter_echo_half;
+			}
+		}
+	}
+	
+	// ALPHA = 2 items before clearfloat
+	
+	.m-gridview__item:nth-of-type(2n+1){
+		clear: both;
+		
+		@media screen and (min-width: $beta_query) {
+			clear: none;
+		}
+	}
 
-// clear by number of items / screen
+	// BETA = 3 items before clearfloat
 
-	.m-contacts__contact:nth-of-type(2n+1){
+	.m-gridview__item:nth-of-type(3n+1){
 		@media screen and (min-width: $beta_query) {
 			clear: both;
 		} @media screen and (min-width: $charlie_query) {
@@ -70,7 +125,9 @@
 		}
 	}
 	
-	.m-contacts__contact:nth-of-type(3n+1){
+	// CHARLIE = 4 items before clearfloat
+
+	.m-gridview__item:nth-of-type(4n+1){
 		@media screen and (min-width: $charlie_query) {
 			clear: both;
 		} @media screen and (min-width: $delta_query) {
@@ -78,9 +135,21 @@
 		}
 	}
 	
-	.m-contacts__contact:nth-of-type(4n+1){
+	// DELTA = 5 items before clearfloat
+	
+	.m-gridview__item:nth-of-type(5n+1){
 		@media screen and (min-width: $delta_query) {
 			clear: both;
-		} 
-	}	
+		} @media screen and (min-width: $echo_query) {
+			clear: none;
+		}
+	}
+	
+	// ECHO = 5 items before clearfloat
+	
+	.m-gridview__item:nth-of-type(6n+1){
+		@media screen and (min-width: $echo_query) {
+			clear: both;
+		}
+	}
 }

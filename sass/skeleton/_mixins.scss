@@ -138,6 +138,7 @@
 	-webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 	color: $body;
+	border: 1px solid $action;
 	background-color: $action;
 	
 	&.inline{
@@ -155,6 +156,12 @@
 			padding-right: $leading;
 			padding-left: $leading;
 		}
+	}
+	
+	&.secondary{
+		color: $action;
+		border: 1px solid $action;
+		background-color: $body;
 	}
 }
 

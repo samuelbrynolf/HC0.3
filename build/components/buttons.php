@@ -2,7 +2,8 @@
 <p>Toggle inline-block for buttons with <code>.inline</code></p>
 <section class="l-container m-components">
 	<div class="l-span-B4">
-		<button class="a-btn">Click</button>
+		<button class="a-btn">Primary button style</button>
+		<input class="a-btn secondary" type="submit" value="Secondary button style" />
 	</div>
 
 	<div class="l-span-B4">

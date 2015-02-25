@@ -1,4 +1,63 @@
-<section id="topsection" class="m-components">
+<!DOCTYPE html>
+
+<html class="no-js">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta charset="utf-8">
+	  <meta name="HandheldFriendly" content="True">
+	  <meta name="MobileOptimized" content="320">
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+	  
+	   <script>
+	  	document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js wfl');
+
+			WebFontConfig = {
+				google: { 
+					families: [ 'Aclonica', 'Acme', 'Alegreya' ]
+				},
+				timeout: 2000 // Set the timeout to two seconds
+			};
+			
+			(function() {
+				 var wf = document.createElement('script');
+				 wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				     '://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js';
+				 wf.type = 'text/javascript';
+				 wf.async = 'true';
+				 var s = document.getElementsByTagName('script')[0];
+				 s.parentNode.insertBefore(wf, s);
+			})();
+		</script>
+		
+	  <link rel="stylesheet" href="style.css">
+	  
+	  <!--[if lt IE 9]>
+			<script type="text/javascript" src="js/helpers/html5shiv.min.js"></script>
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script type="text/javascript" src="js/helpers/respond.min.js"></script>
+		<![endif]-->
+		
+	  <title></title>
+	  
+	  <script type="text/javascript" src="js/vendors/picturefill.min.js"></script>
+
+	</head>
+	
+	<body>
+
+		<!--
+<header id="js-global-header" class="o-global-header" role="banner">
+			<nav id="js-global-nav" class="m-global-nav" role="navigation">
+				<a href="#">Link</a>
+				<a href="#">Link</a>
+				<a href="#">Link</a>
+			</nav>
+		</header>
+-->
+		
+		<div class="t-components"><section id="topsection" class="m-components">
 	<h1 class="a-components__title">
 		Webfontloader test<br/>
 		<span>— controlled by <code>.wfl</code>* -classes.</span>
@@ -65,7 +124,7 @@
 		<li>List-item 5</li>
 		<li>List-item 6</li>
 		<li>List-item 7</li>
-	</ul>
+	</ul
 </section>
 
 <section class="m-components">
@@ -83,7 +142,7 @@
 <h2 class="a-components__sectiontitle">Fade in optional elements when they are in viewport using <code>.js-JVC</code></h2>
 
 <section class="m-components">
-	Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt.
+	<p>Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus. Quisque lacus quam, egestas ac tincidunt.</p>
 </section>
 
 <section class="m-components">
@@ -190,57 +249,15 @@
 <h2 class="a-components__sectiontitle"><a class="js-jumper" href="#topsection" rel="nofollow">Click me</a> to smoothscroll to top of document: <code>smoothScroll();</code></h2>
 <p>Add <code>.js-jumper</code> to the link. Set target for scroll as an ID as href. Use <code>rel="nofollow"</code></p>
 
-<section class="m-components">
-	<h2 class="a-components__sectiontitle">Add fancy loadingeffects: <code>gridViewEffects();</code> hook with <code>.js-medialoadEffect</code> on parent element.</h2>
-	<div class="o-gridview js-medialoadEffect">
-	
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-		<div class="m-gridview__item">
-			<img src="img/component_demo_imgs/image7.png" alt="" />
-		</div>
-	</div>
-</section>
+<section class="m-components"><a class="tappilyTap" href="components.php">Static components (Link is triggered by Tappy)</a></section></div>		
+		<!--
+<footer class="l-container o-global-footer" role="contentinfo">
+
+		</footer>
+-->
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+		<script src="js/bundled.min.js"></script>
+
+	</body>
+</html> 
