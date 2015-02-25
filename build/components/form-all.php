@@ -1,10 +1,10 @@
 <section class="l-clearfix m-components">
-	<h2 class="a-components__sectiontitle">Formelements</h2>
-	
+	<h2 class="a-components__sectiontitle">Formelements: <code>_atoms.scss, _modules.scss, _states.scss, _animations.scss, parsley.js</code></h2>
+	<p class="row">Toggle inline-block for inputs with <code>.inline</code>. Validation for the frontend by parsley.js.</p>
 	<form role="form" class="m-form" data-parsley-validate>
 	  <div class="form-group">
 	  	<label class="a-label block" for="exampleInputText">Forename</label>
-	    <input type="text" class="a-inputText inline" id="exampleInputText" placeholder="Enter name" tabindex="1" required>
+	    <input type="text" class="a-inputText" id="exampleInputText" placeholder="Enter name" tabindex="1" required>
 	    <!--  http://googlewebmastercentral.blogspot.se/2012/01/making-form-filling-faster-easier-and.html -->
 	  </div>
 	  <div class="form-group">

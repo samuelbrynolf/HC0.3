@@ -1,7 +1,6 @@
+<h2 class="a-components__sectiontitle">Buttons: <code>_atoms.scss, _states.scss, _animations.scss</code></h2>
+<p>Toggle inline-block for buttons with <code>.inline</code></p>
 <section class="l-container m-components">
-	<div class="l-span-A12">
-		<h2 class="a-components__sectiontitle">Buttons</h2>
-	</div>
 	<div class="l-span-B4">
 		<button class="a-btn">Click</button>
 	</div>

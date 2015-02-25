@@ -7,7 +7,19 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	@include gradient(rgba($startcolor_multi,0.3), rgba($stopcolor_multi, 0.3), transparent);
+	background-color: $bodycolor;
+	background-color: rgba($bodycolor, 0.65);
+	
+	&.gradient{
+		@include gradient(rgba($startcolor_multi,0.4), rgba($stopcolor_multi, 0.4), transparent);
+	}
+	
+	.overlay__text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 .row{

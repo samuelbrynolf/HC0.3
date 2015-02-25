@@ -1,4 +1,5 @@
 <section class="m-components">
+	<h2 class="a-components__sectiontitle">Ordered & unordered lists: <code>_atoms.scss</code></h2>
 	<ol class="a-ol">
 		<li>List item1: Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum.</li>
 		<li>List item2: Praesent id metus massa, ut blandit odio.</li>

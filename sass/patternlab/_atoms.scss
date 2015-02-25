@@ -122,8 +122,10 @@ img.forcewidth{
 input[type="text"],
 input[type="email"], 
 input[type="tel"],
+input[type="password"],
 .a-inputText{
 	@include formText();
+	background: white;
 }
 
 .a-textarea,
@@ -132,9 +134,8 @@ textarea{
  line-height: 1.5;
  padding-top: 1.25em;
  padding-bottom: 1.25em;
+ background: white;
 }
-
-
 
 .a-input-descr{
 	@extend .a-fineprint;
@@ -249,24 +250,18 @@ input[type="submit"]{
 }
 
 .a-modal__btn{
-	position: relative;
-	visibility: hidden;
+	display: block;
+	text-indent: -9999px;
 	width: 24px;
 	height: 24px;
 	overflow: hidden;
 	
 	&:after{
-		position: absolute;
+		@include iconAfter();
+		content: '\e043';
 		top: 0;
 		right: 0;
-		visibility: visible;
-		font-family: $icon-font;
 		font-size: 24px;
-		line-height: 1;
 		color: $action;
-	}
-	
-	&.close:after{
-		content: '\e043';
 	}
 }

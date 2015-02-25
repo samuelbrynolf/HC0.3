@@ -1,13 +1,13 @@
 @import "sass/__settings";
 
-@import "sass/framework/_variables_calc";
-@import "sass/framework/_mixins";
-@import "sass/framework/_reset";
-@import "sass/framework/_fonts";
-@import "sass/framework/_plugins";
-@import "sass/framework/_base_framework";
-@import "sass/framework/_layout";
-@import "sass/framework/_extends_placeholders";
+@import "sass/skeleton/_variables_calc";
+@import "sass/skeleton/_mixins";
+@import "sass/skeleton/_reset";
+@import "sass/skeleton/_fonts";
+@import "sass/skeleton/_plugins";
+@import "sass/skeleton/_base";
+@import "sass/skeleton/_layout";
+@import "sass/skeleton/_extends_placeholders";
 
 @import "sass/patternlab/_atoms";
 @import "sass/patternlab/_molecules";

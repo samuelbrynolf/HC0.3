@@ -7,7 +7,7 @@
 	.m-dropdown {
     position: relative;
     display: block;
-    background: $body;
+    background: white;
 	}
 	
 	.m-dropdown::after {
@@ -136,6 +136,7 @@ x:-o-prefocus,
 	
 	.a-modal__btn{
 		position: absolute;
+		z-index: 250;
 		top: $gutter_alpha_half;
 		right: $gutter_alpha_half;
 		

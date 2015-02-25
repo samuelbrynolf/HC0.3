@@ -96,8 +96,7 @@
 	@include type-to-em(12,48);
 	font-family: $bodyfont;
 	width: 100%;
-	padding: $body_leading/12+0em $body_leading/12+0em;
-	padding: 0 $leading;
+	padding: 0 24/$alpha_bodysize+0em;
 	-webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 	
@@ -127,6 +126,7 @@
 
 @mixin formBtn(){
 	display: block;
+	width: auto;
 	@include type-to-em(14,21);
 	font-family: $captionfont;
 	width: 100%;
@@ -161,10 +161,7 @@
 @mixin iconAfter(){
 	position: absolute;
 	display: block;
-	top: 50%;
-	left: 50%;
 	z-index: 50;
-	transform: translate(-50%, -50%);
 	line-height: 1;
 	font-family: $icon-font;
 	text-indent: 0;

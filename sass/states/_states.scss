@@ -34,7 +34,9 @@ input[type="submit"].a-btn:hover{
 	cursor: pointer;
 }
 
-
+.a-modal__btn:hover{
+	cursor: pointer;
+}
 
 
 // FOCUS
@@ -95,6 +97,18 @@ body:last-child .m-dropdown .a-select:focus {
 	
 	&:after{
 		content: '\e115';
+	}
+}
+
+.o-modal.s-is-active{
+	visibility: visible;
+	opacity: 1;
+	z-index: 100;
+	pointer-events: auto;
+	
+	.m-modal__popup{
+		z-index: 200;
+		pointer-events: auto;
 	}
 }
 

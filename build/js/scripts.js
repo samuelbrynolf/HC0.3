@@ -60,13 +60,31 @@
 				resizeTimeoutId = setTimeout(mediaChecker,300);
 			});
 		}
-	}
+	} // end mq_scripts
 	
 	function tappyItems(){	
 		$('a.tappilyTap').bind('tap', function(e){
 			window.location=e.target.href;
 		});
 	} // end tappyItems()
+	
+	function modal(){
+		var modalOpener = $('.js-openmodal');
+		var modalClose = $('.js-closemodal');
+		
+		modalOpener.bind('tap', function(e){
+			var $this = $(this);
+			var modalTarget = $($this.attr('data-modaltarget'));
+			modalTarget.addClass('s-is-active');
+		});
+		
+		modalClose.bind('tap', function(){
+			var $this = $(this);
+			var activeModal = $this.parents('.o-modal');
+			
+			activeModal.removeClass('s-is-active');
+		});
+	} // end modals
 	
 	function smoothScroll(){
   	$('.js-jumper').bind('tap', function(e){
@@ -100,7 +118,7 @@
       var toggler = $('.m-toggled__elem').prev();
 
       toggler.bind('tap', function(){
-     		$this = $(this);
+     		var $this = $(this);
         var thisParent = $this.parent('.m-toggled');
         var thisNext = $this.next('.m-toggled__elem');
         thisParent.toggleClass('s-is-active');
@@ -121,7 +139,7 @@
       expandButton.insertAfter(expandSection);
 
       expandButton.bind('tap', function(){
-        $this = $(this);
+        var $this = $(this);
         $this.prev(expandSection).css('max-height', fullHeight).addClass('s-is-expanded');
         $this.addClass('s-is-hidden');
       });
@@ -134,7 +152,7 @@
 				$('input:checked').parent('.a-label').addClass('s-is-checked');
 				$('input:disabled').parent('.a-label').addClass('s-is-disabled');
 				$('form[role="form"]').on('click', '.a-label.checkbox, .a-label.radio', function(){
-					$this = $(this);
+					var $this = $(this);
 					if($this.children().is(':disabled')) return false;
 					
 					var $thisCheckbox = $this.children('input:checkbox');
@@ -198,6 +216,7 @@
  	
 	mq_scripts();
  	tappyItems();
+ 	modal();
  	smoothScroll();
  	toggleElems();
  	expandSection();

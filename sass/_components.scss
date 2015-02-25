@@ -1,11 +1,12 @@
+// Styling used for the components-demo only, not production.
+
 .t-components{
 	margin: 8em auto 0 auto;
 	width: 60%;
 	
 	code{
 		display: inline;
-		font-size: 1.4em;
-		padding-left: 0.5em;
+		font-size: 1.3em;
 		-webkit-font-smoothing: antialiased;
 	  text-rendering: optimizeLegibility;
 	  color: darken(orange, 5%);
@@ -25,6 +26,10 @@
 	 span{
 	 	color: $subtle-text;
 	 }
+	 
+	 code{
+	 	padding-left: 0.5em;
+	 }
 }
 
 .a-components__sectiontitle{
@@ -33,6 +38,10 @@
 	 margin-bottom: 1.5em;
 	 padding-bottom: 1em;
 	 border-bottom: 1px solid;
+}
+
+.m-compontents__subtle_example{
+	color: $subtle-text;
 }
 
 .lib-overlay-container{
@@ -47,6 +56,14 @@
 	
 	&.action{
 		background: $action;
+	}
+	
+	&.primary{
+		background: $primary;
+	}
+	
+	&.secondary{
+		background: $secondary;
 	}
 	
 	&.complementary{
@@ -64,7 +81,6 @@
 	
 	&.gradient-overlay{
 		@extend .overlay;
-		padding-top: 10%;
 	}
 	
 	&.gradient-complementary{
